@@ -26,6 +26,12 @@ export class MasterIntegratorAgent extends BaseAgent<MasterIntegratorInput, Mast
       Story Architecture:
       ${JSON.stringify(input.story, null, 2)}
 
+      Emotional Arc:
+      ${JSON.stringify(input.emotionalArc, null, 2)}
+
+      Thematic Elements:
+      ${JSON.stringify(input.thematicElements, null, 2)}
+
       Visual Bible:
       ${JSON.stringify(input.visual, null, 2)}
       
@@ -61,10 +67,9 @@ export class MasterIntegratorAgent extends BaseAgent<MasterIntegratorInput, Mast
         director_vision_statement: input.vision.synthesizedVision.unifiedDescription,
         unified_story: {
             logline: input.story.storyArchitecture.logline,
-            three_act_structure: input.story.storyArchitecture.three_act_structure,
-            // These would need to be sourced from the context if available
-            emotional_arc: {} as any, 
-            thematic_elements: {} as any,
+            three_act_structure: input.story.storyArchitecture.threeActStructure,
+            emotional_arc: input.emotionalArc.emotionalArc,
+            thematic_elements: input.thematicElements.thematicElements,
         },
         complete_visual_bible: input.visual.visualBible,
         final_shot_list_with_all_specs: input.cine.cinematographyBible.final_shot_list.map((shot: any) => ({

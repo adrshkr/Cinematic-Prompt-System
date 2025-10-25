@@ -1,46 +1,14 @@
 // App.tsx
 import React, { useState } from 'react';
 import { AgentMode } from './types';
-import { AGENT_MODES } from './constants';
+import { AGENT_MODES } from './lib/constants';
 import SeedAnalyzer from './components/SeedAnalyzer';
 import WebResearch from './components/WebResearch';
 import DeepDive from './components/DeepDive';
 import { useDarkMode } from './hooks/useDarkMode';
-import { SunIcon, MoonIcon } from './components/Icons';
+import { SunIcon, MoonIcon } from './components/ui/Icons';
 import ErrorBoundary from './components/ErrorBoundary';
-
-interface NavButtonProps {
-  mode: AgentMode;
-  currentMode: AgentMode;
-  setCurrentMode: (mode: AgentMode) => void;
-  children: React.ReactElement<{ className?: string }>;
-}
-
-const NavButton: React.FC<NavButtonProps> = ({
-  mode,
-  currentMode,
-  setCurrentMode,
-  children,
-}) => {
-  const isActive = currentMode === mode;
-  const activeConfig = AGENT_MODES.find((m) => m.id === mode);
-  if (!activeConfig) return null;
-
-  const baseClasses =
-    'flex items-center gap-2 px-4 py-2 font-medium rounded-lg transition-all duration-200';
-  const activeClasses = `bg-gray-800 dark:bg-gray-800 text-white shadow-sm`;
-  const inactiveClasses = 'text-gray-500 dark:text-gray-400 hover:bg-gray-200/70 dark:hover:bg-gray-800/50';
-
-  return (
-    <button
-      onClick={() => setCurrentMode(mode)}
-      className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
-    >
-      {React.cloneElement(children, { className: 'w-5 h-5' })}
-      {activeConfig.name}
-    </button>
-  );
-};
+import { NavButton } from './components/NavButton';
 
 const App: React.FC = () => {
   const [currentMode, setCurrentMode] = useState<AgentMode>(AgentMode.SeedAnalyzer);

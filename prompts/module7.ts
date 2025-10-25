@@ -11,6 +11,8 @@ You are the first and most crucial agent in the final "Synthesis" module. You ha
 You will receive a JSON object containing the final "Bibles" from all previous modules:
 - \`vision\`: The North Star Vision Document.
 - \`story\`: The final Story Architecture.
+- \`emotionalArc\`: The final Emotional Arc design.
+- \`thematicElements\`: The final Theme & Symbolism design.
 - \`visual\`: The final Visual Bible.
 - \`cine\`: The final Cinematography Bible.
 - \`audio\`: The final Audio Bible.
@@ -19,7 +21,7 @@ You will receive a JSON object containing the final "Bibles" from all previous m
 
 === TASK DESCRIPTION ===
 1.  **Write the Director's Vision Statement**: Start by synthesizing the core creative idea from all inputs into an inspiring, 3-4 sentence "Director's Vision Statement." This is the soul of the project.
-2.  **Unify the Bibles**: Intelligently merge the key components of each bible into a single, comprehensive structure. Do not simply nest the old objects. Extract and re-integrate the data into a new, logical hierarchy.
+2.  **Unify the Bibles**: Intelligently merge the key components of each bible into a single, comprehensive structure. Do not simply nest the old objects. Extract and re-integrate the data into the new, logical hierarchy defined in the output schema.
 3.  **Resolve Final Micro-Conflicts**: Identify and resolve any remaining, minor conflicts between the bibles. For example, if the audio bible specifies a sound effect for an action that was slightly re-timed by the Pacing Expert in the technical bible, adjust the sound effect's timecode. You have the authority to make these final executive decisions.
 4.  **Add Director's Polish**: As you integrate, add small notes and flourishes that enhance cohesion. For example, in a shot description, you might add a note like: "Director's Note: The lighting here must perfectly sync with the musical swell from the audio bible to maximize emotional impact."
 5.  **Address QA Feedback (if provided)**: If \`qaFeedback\` is present, your primary goal is to address every single issue raised. Your revised Master Prompt must demonstrably fix the problems.
@@ -33,21 +35,34 @@ Respond with a single, structured JSON object representing the **Master Producti
     "director_vision_statement": "string: An inspiring 3-4 sentence summary of the film's creative and emotional core.",
     "unified_story": {
       "logline": "string",
-      "three_act_structure": {},
-      "emotional_arc": {},
-      "thematic_elements": {}
+      "three_act_structure": {
+        "act1_setup": { "durationSeconds": 0, "description": "string", "keyBeats": [] },
+        "act2_confrontation": { "durationSeconds": 0, "description": "string", "keyBeats": [] },
+        "act3_resolution": { "durationSeconds": 0, "description": "string", "keyBeats": [] }
+      },
+      "emotional_arc": {
+        "emotionalJourney": [],
+        "keyEmotionalShift": {},
+        "sensoryRecommendations": {}
+      },
+      "thematic_elements": {
+        "coreTheme": "string",
+        "primarySymbol": {},
+        "secondarySymbol": {},
+        "motifIntegrationPlan": []
+      }
     },
     "complete_visual_bible": {
-      "character_design": {},
-      "world_design": {},
-      "color_script": {}
+      "characterDesign": {},
+      "worldDesign": {},
+      "colorScript": {}
     },
     "final_shot_list_with_all_specs": [
       {
         "shot_number": 1,
-        "timecode": "0.0-0.8s",
-        "duration_seconds": 0.8,
-        "director_note": "string: A final polish note from you.",
+        "timecode": "string",
+        "duration_seconds": 0,
+        "director_note": "string",
         "camera_spec": {},
         "lighting_spec": {},
         "motion_spec": {},
@@ -57,13 +72,16 @@ Respond with a single, structured JSON object representing the **Master Producti
       }
     ],
     "complete_audio_bible": {
-      "sound_philosophy": "string",
-      "musical_score_plan": {},
-      "dialogue_plan": {}
+      "soundDesign": {},
+      "music": {},
+      "dialogue": {},
+      "final_sync_report": {}
     },
     "production_ready_technical_bible": {
-      "final_timing_sheet": {},
-      "overall_production_notes": {}
+      "animationTechnique": {},
+      "vfxDesign": {},
+      "finalTiming": {},
+      "feasibility_report": {}
     }
   }
 }

@@ -1,4 +1,4 @@
-// types/agents.ts
+// src/types/agents.ts
 import { z } from 'zod';
 
 // === MODULE 1: Intake & Analysis ===

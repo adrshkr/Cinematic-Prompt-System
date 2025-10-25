@@ -1,4 +1,4 @@
-// prompts/module1.ts
+// src/lib/agents/module1/prompts.ts
 
 export const SEED_ANALYSIS_PROMPT = `
 === ROLE & EXPERTISE ===

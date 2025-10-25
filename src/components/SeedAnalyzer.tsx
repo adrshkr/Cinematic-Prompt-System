@@ -1,82 +1,14 @@
 // components/SeedAnalyzer.tsx
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { usePipelineStore, moduleOutputKeys } from '../store/store';
-import { SparklesIcon, TrashIcon, ChevronDownIcon, CheckIcon, XIcon, ShieldCheckIcon, ArrowPathIcon, PhotoIcon, ArrowDownTrayIcon, ArrowUpTrayIcon, CircleStackIcon } from './Icons';
+import { usePipelineStore } from '../store/store';
+import { SparklesIcon, TrashIcon, ArrowPathIcon, PhotoIcon, ArrowDownTrayIcon, ArrowUpTrayIcon } from './ui/Icons';
 import { AgentStatus } from '../types';
+import { resizeImage } from '../lib/utils';
+import { modules } from '../lib/pipelineConfig';
+import { ModuleAccordion } from './pipeline/ModuleAccordion';
+import { AccordionSection } from './pipeline/AccordionSection';
+import { QualityGateResultDisplay } from './pipeline/QualityGateResultDisplay';
 
-const modules = [
-  { 
-    name: 'Module 1: Intake & Analysis', 
-    agents: ['Agent 1.1', 'Agent 1.2', 'Agent 1.3', 'Quality Gate #1'] 
-  },
-  { 
-    name: 'Module 2: Creative Foundation', 
-    agents: ['Agent 2.1', 'Agent 2.2', 'Agent 2.3', 'Quality Gate #2'] 
-  },
-  { 
-    name: 'Module 3: Visual Design', 
-    agents: ['Agent 3.3', 'Agent 3.1', 'Agent 3.2', 'Agent 3.4', 'Quality Gate #3'] 
-  },
-  {
-    name: 'Module 4: Cinematography',
-    agents: ['Agent 4.1', 'Agent 4.2', 'Agent 4.3', 'Agent 4.4', 'Quality Gate #4']
-  },
-  {
-    name: 'Module 5: Audio Design',
-    agents: ['Agent 5.1', 'Agent 5.2', 'Agent 5.3', 'Agent 5.4', 'Quality Gate #5']
-  },
-  {
-    name: 'Module 6: Technical Specification',
-    agents: ['Agent 6.1', 'Agent 6.2', 'Agent 6.3', 'Agent 6.4', 'Quality Gate #6']
-  },
-  {
-    name: 'Module 7: Synthesis & Refinement',
-    agents: ['Agent 7.1', 'Agent 7.2', 'Agent 7.3']
-  },
-];
-
-const resizeImage = (file: File): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = (event) => {
-      const img = new Image();
-      img.src = event.target?.result as string;
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const MAX_WIDTH = 1024;
-        const MAX_HEIGHT = 1024;
-        let width = img.width;
-        let height = img.height;
-
-        if (width > height) {
-          if (width > MAX_WIDTH) {
-            height *= MAX_WIDTH / width;
-            width = MAX_WIDTH;
-          }
-        } else {
-          if (height > MAX_HEIGHT) {
-            width *= MAX_HEIGHT / height;
-            height = MAX_HEIGHT;
-          }
-        }
-
-        canvas.width = width;
-        canvas.height = height;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) {
-          return reject(new Error('Could not get canvas context'));
-        }
-        ctx.drawImage(img, 0, 0, width, height);
-        
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
-        resolve(dataUrl);
-      };
-      img.onerror = (error) => reject(error);
-    };
-    reader.onerror = (error) => reject(error);
-  });
-};
 
 const SeedAnalyzer: React.FC = () => {
   const store = usePipelineStore();
@@ -84,8 +16,7 @@ const SeedAnalyzer: React.FC = () => {
     seedImage, setSeedImage,
     conceptBrief, setConceptBrief,
     agentStatuses, isPipelineRunning, error, openModules,
-    runPipeline, clearAll, toggleModuleCache, importState,
-    modulesToRunFromCache,
+    runPipeline, clearAll, importState,
     imageAnalysis, conceptAnalysis, visionDocument, qualityGateResult,
     storyArchitecture, emotionalArc, thematicElements, qualityGate2Result,
     characterDesign, worldDesign, colorScript, visualBible, qualityGate3Result,
@@ -93,7 +24,8 @@ const SeedAnalyzer: React.FC = () => {
     audioBible, qualityGate5Result,
     technicalBible, qualityGate6Result,
     masterPrompt, qualityGate7Result,
-    finalFormattedPrompt
+    finalFormattedPrompt,
+    modulesToRunFromCache,
   } = store;
   
   const [openAccordion, setOpenAccordion] = useState<string | null>('vision');
@@ -163,7 +95,7 @@ const SeedAnalyzer: React.FC = () => {
   const handleExportState = () => {
     const stateToExport = { ...store };
     // Convert Set to Array for JSON serialization
-    stateToExport.modulesToRunFromCache = Array.from(stateToExport.modulesToRunFromCache) as any;
+    (stateToExport.modulesToRunFromCache as any) = Array.from(stateToExport.modulesToRunFromCache);
     
     const jsonString = JSON.stringify(stateToExport, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
@@ -209,160 +141,6 @@ const SeedAnalyzer: React.FC = () => {
       setOpenAccordion('vision');
     }
   }, [visionDocument]);
-
-  const StatusIndicator = ({ status }: { status: AgentStatus }) => {
-    const statusConfig = {
-      pending: { color: 'bg-gray-300 dark:bg-gray-600', icon: null },
-      running: { color: 'bg-blue-200 dark:bg-blue-900/50', icon: <div className="w-2.5 h-2.5 bg-blue-500 rounded-full animate-pulse"></div> },
-      success: { color: 'bg-green-200 dark:bg-green-900/50', icon: <CheckIcon className="w-3 h-3 text-green-700 dark:text-green-300" /> },
-      error: { color: 'bg-red-200 dark:bg-red-900/50', icon: <XIcon className="w-3 h-3 text-red-700 dark:text-red-300" /> },
-    };
-    const config = statusConfig[status];
-
-    const ProgressCircle = () => (
-      <svg className="w-5 h-5 absolute" viewBox="0 0 20 20">
-        <circle className="text-gray-200 dark:text-gray-700" strokeWidth="2" stroke="currentColor" fill="transparent" r="8" cx="10" cy="10"/>
-        <circle className="text-blue-500 animate-spin-slow" strokeWidth="2" strokeLinecap="round" stroke="currentColor" fill="transparent" r="8" cx="10" cy="10" style={{ strokeDasharray: '12 50' }}/>
-      </svg>
-    );
-
-    return (
-      <div className="relative flex items-center justify-center w-5 h-5">
-        {status === 'running' && <ProgressCircle />}
-        <div className={`w-4 h-4 rounded-full flex items-center justify-center ${config.color}`}>
-          {config.icon}
-        </div>
-      </div>
-    );
-  };
-
-  const AccordionSection = ({ title, data, id }: { title: string, data: any, id: string }) => {
-    if (!data) return null;
-    const isOpen = openAccordion === id;
-    return (
-      <div className="border border-gray-200/80 dark:border-gray-800 rounded-lg bg-white dark:bg-[#1C1C1C]">
-        <button onClick={() => setOpenAccordion(isOpen ? null : id)} className="w-full flex justify-between items-center p-4 bg-gray-50/70 hover:bg-gray-100/50 dark:bg-gray-800/40 dark:hover:bg-gray-800/60 rounded-t-lg">
-          <h3 className="font-semibold text-gray-800 dark:text-gray-200">{title}</h3>
-          <ChevronDownIcon className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-        </button>
-        {isOpen && (
-          <div className="p-4 border-t border-gray-200/80 dark:border-gray-800 max-h-96 overflow-y-auto">
-            <pre className="text-sm bg-black text-white p-4 rounded-md whitespace-pre-wrap">
-              {JSON.stringify(data, null, 2)}
-            </pre>
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const QualityGateResultDisplay = ({ result, gateNumber }: { result: any, gateNumber: number }) => {
-    if (!result?.qualityGateReport) return null;
-    const report = result.qualityGateReport;
-    const passed = report.summary.overallPassed;
-
-    return (
-      <div className={`border-2 ${passed ? 'border-green-300 dark:border-green-700/50' : 'border-red-300 dark:border-red-700/50'} bg-white dark:bg-[#1C1C1C] rounded-lg p-4 shadow-sm`}>
-        <div className="flex items-center gap-3">
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center ${passed ? 'bg-green-100 dark:bg-green-900/40' : 'bg-red-100 dark:bg-red-900/40'}`}>
-            {passed ? <ShieldCheckIcon className="w-5 h-5 text-green-600 dark:text-green-300" /> : <XIcon className="w-5 h-5 text-red-600 dark:text-red-300" />}
-          </div>
-          <div>
-            <h3 className={`text-lg font-bold ${passed ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'}`}>
-              Quality Gate #{gateNumber}: {report.gateName.split(':')[1].trim()} - {passed ? 'PASSED' : 'FAILED'}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Overall Score: <span className="font-semibold">{report.summary.overallScore.toFixed(1)} / 10.0</span>
-            </p>
-          </div>
-        </div>
-        {!passed && report.summary.issuesToAddress?.length > 0 && (
-          <div className="mt-4 pl-11">
-            <h4 className="font-semibold text-red-800 dark:text-red-200">Issues to Address:</h4>
-            <ul className="list-disc list-inside mt-1 text-sm text-red-700 dark:text-red-300 space-y-1">
-              {report.summary.issuesToAddress.map((issue: string, index: number) => (
-                <li key={index}>{issue}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    );
-  };
-  
-  interface AgentStatusItemProps {
-    name: string;
-    status: AgentStatus;
-  }
-  
-  const AgentStatusItem: React.FC<AgentStatusItemProps> = ({ name, status }) => {
-    const agentNameMap: Record<string, string> = {
-      'Agent 1.1': 'Image Analysis', 'Agent 1.2': 'Concept Extraction', 'Agent 1.3': 'Vision Synthesizer',
-      'Agent 2.1': 'Story Architect', 'Agent 2.2': 'Emotional Arc Designer', 'Agent 2.3': 'Theme & Symbolism',
-      'Agent 3.1': 'Character Design', 'Agent 3.2': 'World Design', 'Agent 3.3': 'Color Script', 'Agent 3.4': 'Visual Integrator',
-      'Agent 4.1': 'Camera & Framing', 'Agent 4.2': 'Lighting Director', 'Agent 4.3': 'Motion Choreographer', 'Agent 4.4': 'Cinematography Integrator',
-      'Agent 5.1': 'Sound Design', 'Agent 5.2': 'Music Composer', 'Agent 5.3': 'Dialogue Director', 'Agent 5.4': 'Audio Integrator',
-      'Agent 6.1': 'Animation Technique', 'Agent 6.2': 'VFX Designer', 'Agent 6.3': 'Timing & Pacing', 'Agent 6.4': 'Technical Integrator',
-      'Agent 7.1': 'Master Integrator', 'Agent 7.2': 'Final QA', 'Agent 7.3': 'Prompt Formatter',
-    };
-    const displayName = agentNameMap[name] || name;
-
-    return (
-      <div className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800/60 rounded-lg border border-gray-200/80 dark:border-gray-700">
-        <StatusIndicator status={status} />
-        <span className="flex-grow text-sm font-medium text-gray-700 dark:text-gray-300">{displayName}</span>
-        <span className="text-xs text-gray-500 dark:text-gray-400 capitalize">{status}</span>
-      </div>
-    );
-  };
-  
-  interface ModuleAccordionProps {
-    title: string;
-    agents: string[];
-    statuses: Record<string, AgentStatus>;
-    isOpen: boolean;
-    onToggle: () => void;
-  }
-  
-  const ModuleAccordion: React.FC<ModuleAccordionProps> = ({ title, agents, statuses, isOpen, onToggle }) => {
-    const hasData = !!store[moduleOutputKeys[title] as keyof typeof store];
-    const isCached = modulesToRunFromCache.has(title);
-
-    return (
-      <div className="border border-gray-200/80 dark:border-gray-800 rounded-xl bg-white/50 dark:bg-[#1C1C1C]/50 overflow-hidden">
-        <button onClick={onToggle} className="w-full flex justify-between items-center p-3 bg-gray-50/70 hover:bg-gray-100/50 dark:bg-gray-800/30 dark:hover:bg-gray-800/50">
-          <div className="flex items-center gap-3">
-            {hasData && <CircleStackIcon className="w-5 h-5 text-indigo-500" />}
-            <h3 className="font-semibold text-gray-800 dark:text-gray-200 text-base">{title}</h3>
-          </div>
-          <div className="flex items-center gap-4">
-             {hasData && (
-                <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
-                    <span className={`text-xs font-medium ${isCached ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500'}`}>Use Cache</span>
-                    <button
-                        role="switch"
-                        aria-checked={isCached}
-                        onClick={() => toggleModuleCache(title)}
-                        className={`${isCached ? 'bg-indigo-600' : 'bg-gray-300 dark:bg-gray-600'} relative inline-flex h-6 w-11 items-center rounded-full transition-colors`}
-                    >
-                        <span className={`${isCached ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition-transform`} />
-                    </button>
-                </div>
-            )}
-            <ChevronDownIcon className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-          </div>
-        </button>
-        {isOpen && (
-          <div className="p-3 space-y-2 border-t border-gray-200/80 dark:border-gray-800 bg-gray-50/30 dark:bg-black/20">
-            {agents.map(agentName => (
-              <AgentStatusItem key={agentName} name={agentName} status={statuses[agentName]} />
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
 
   return (
     <div className="space-y-8">
@@ -456,13 +234,6 @@ const SeedAnalyzer: React.FC = () => {
                 key={module.name}
                 title={module.name}
                 agents={module.agents}
-                statuses={agentStatuses}
-                isOpen={openModules.includes(module.name)}
-                onToggle={() => usePipelineStore.getState().setOpenModules(prev => 
-                  prev.includes(module.name) 
-                    ? prev.filter(m => m !== module.name)
-                    : [...prev, module.name]
-                )}
               />
             ))}
           </div>

@@ -1,7 +1,7 @@
-// lib/agents/module1/concept-extraction-agent.ts
+// src/lib/agents/module1/concept-extraction-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
 import { ConceptExtractionInput, ConceptExtractionOutput, ConceptExtractionInputSchema, ConceptExtractionOutputSchema } from '../../../types/agents';
-import { CONCEPT_EXTRACTION_PROMPT } from '../../../prompts/module1';
+import { CONCEPT_EXTRACTION_PROMPT } from './prompts';
 
 export class ConceptExtractionAgent extends BaseAgent<ConceptExtractionInput, ConceptExtractionOutput> {
   protected agentName = 'agent-1.2-concept-extraction';
@@ -36,7 +36,6 @@ export class ConceptExtractionAgent extends BaseAgent<ConceptExtractionInput, Co
     let score = 0;
     if (output.creativeBriefSummary.length > 10) score += 25;
     if (output.coreNarrative.characters.length > 0) score += 25;
-    // FIX: Changed check to use an existing property. A good extraction has no ambiguities.
     if (output.ambiguitiesAndConflicts.needsClarification.length === 0) score += 25;
     if (output.extractedKeywords.length >= 15) score += 25;
     return Math.min(score, 100);

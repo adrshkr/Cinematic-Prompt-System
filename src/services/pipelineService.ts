@@ -1,149 +1,18 @@
-// services/pipelineService.ts
+// src/services/pipelineService.ts
 import { agentRegistry } from '../lib/agents/registry';
 import { AgentStatus } from '../types';
-import { usePipelineStore } from '../store/store';
-import type { PipelineState, PipelineActions } from '../store/store';
+import { usePipelineStore, PipelineState, PipelineActions } from '../store/store';
+import { 
+  pipelineStages, 
+  moduleMap, 
+  agentNameMapping, 
+  agentToStateKeyMap,
+  AgentName
+} from '../lib/pipelineConfig';
 
-type AgentName = keyof typeof agentRegistry;
+
 type StoreSetter = (partial: Partial<PipelineState & PipelineActions>, replace?: boolean | undefined) => void;
 type StoreGetter = () => PipelineState & PipelineActions;
-
-// Defines the execution order in stages. Agents in the same stage run in parallel.
-const pipelineStages: AgentName[][] = [
-  // Module 1: Intake & Analysis
-  ['imageAnalysis', 'conceptExtraction'],
-  ['visionSynthesizer'],
-  ['qualityGate1'],
-  
-  // Module 2: Creative Foundation
-  ['storyArchitect', 'emotionalArcDesigner', 'themeSymbolism'],
-  ['qualityGate2'],
-
-  // Module 3: Visual Design
-  ['colorScript'],
-  ['characterDesign', 'worldDesign'],
-  ['visualIntegrator'],
-  ['qualityGate3'],
-
-  // Module 4: Cinematography
-  ['cameraFraming'],
-  ['lightingDirector', 'motionChoreographer'],
-  ['cinematographyIntegrator'],
-  ['qualityGate4'],
-
-  // Module 5: Audio Design
-  ['soundDesign', 'musicComposer', 'dialogueDirector'],
-  ['audioIntegrator'],
-  ['qualityGate5'],
-
-  // Module 6: Technical Specification
-  ['animationTechnique', 'vfxDesigner', 'timingPacing'],
-  ['technicalIntegrator'],
-  ['qualityGate6'],
-
-  // Module 7: Synthesis & Refinement
-  ['masterIntegrator'],
-  ['qualityGate7'],
-  ['promptFormatter'],
-];
-
-// Maps agent keys to their corresponding UI module names for accordion control.
-const moduleMap: Record<AgentName, string> = {
-    imageAnalysis: 'Module 1: Intake & Analysis',
-    conceptExtraction: 'Module 1: Intake & Analysis',
-    visionSynthesizer: 'Module 1: Intake & Analysis',
-    qualityGate1: 'Module 1: Intake & Analysis',
-    storyArchitect: 'Module 2: Creative Foundation',
-    emotionalArcDesigner: 'Module 2: Creative Foundation',
-    themeSymbolism: 'Module 2: Creative Foundation',
-    qualityGate2: 'Module 2: Creative Foundation',
-    colorScript: 'Module 3: Visual Design',
-    characterDesign: 'Module 3: Visual Design',
-    worldDesign: 'Module 3: Visual Design',
-    visualIntegrator: 'Module 3: Visual Design',
-    qualityGate3: 'Module 3: Visual Design',
-    cameraFraming: 'Module 4: Cinematography',
-    lightingDirector: 'Module 4: Cinematography',
-    motionChoreographer: 'Module 4: Cinematography',
-    cinematographyIntegrator: 'Module 4: Cinematography',
-    qualityGate4: 'Module 4: Cinematography',
-    soundDesign: 'Module 5: Audio Design',
-    musicComposer: 'Module 5: Audio Design',
-    dialogueDirector: 'Module 5: Audio Design',
-    audioIntegrator: 'Module 5: Audio Design',
-    qualityGate5: 'Module 5: Audio Design',
-    animationTechnique: 'Module 6: Technical Specification',
-    vfxDesigner: 'Module 6: Technical Specification',
-    timingPacing: 'Module 6: Technical Specification',
-    technicalIntegrator: 'Module 6: Technical Specification',
-    qualityGate6: 'Module 6: Technical Specification',
-    masterIntegrator: 'Module 7: Synthesis & Refinement',
-    qualityGate7: 'Module 7: Synthesis & Refinement',
-    promptFormatter: 'Module 7: Synthesis & Refinement',
-};
-
-// Maps agent keys to their display names in the UI status list.
-const agentNameMapping: Record<AgentName, string> = {
-  imageAnalysis: 'Agent 1.1',
-  conceptExtraction: 'Agent 1.2',
-  visionSynthesizer: 'Agent 1.3',
-  qualityGate1: 'Quality Gate #1',
-  storyArchitect: 'Agent 2.1',
-  emotionalArcDesigner: 'Agent 2.2',
-  themeSymbolism: 'Agent 2.3',
-  qualityGate2: 'Quality Gate #2',
-  characterDesign: 'Agent 3.1',
-  worldDesign: 'Agent 3.2',
-  colorScript: 'Agent 3.3',
-  visualIntegrator: 'Agent 3.4',
-  qualityGate3: 'Quality Gate #3',
-  cameraFraming: 'Agent 4.1',
-  lightingDirector: 'Agent 4.2',
-  motionChoreographer: 'Agent 4.3',
-  cinematographyIntegrator: 'Agent 4.4',
-  qualityGate4: 'Quality Gate #4',
-  soundDesign: 'Agent 5.1',
-  musicComposer: 'Agent 5.2',
-  dialogueDirector: 'Agent 5.3',
-  audioIntegrator: 'Agent 5.4',
-  qualityGate5: 'Quality Gate #5',
-  animationTechnique: 'Agent 6.1',
-  vfxDesigner: 'Agent 6.2',
-  timingPacing: 'Agent 6.3',
-  technicalIntegrator: 'Agent 6.4',
-  qualityGate6: 'Quality Gate #6',
-  masterIntegrator: 'Agent 7.1',
-  qualityGate7: 'Agent 7.2',
-  promptFormatter: 'Agent 7.3',
-};
-
-
-// Maps agent keys to their corresponding state keys in the Zustand store.
-const agentToStateKeyMap: Partial<Record<AgentName, keyof PipelineState>> = {
-    imageAnalysis: 'imageAnalysis',
-    conceptExtraction: 'conceptAnalysis',
-    visionSynthesizer: 'visionDocument',
-    qualityGate1: 'qualityGateResult',
-    storyArchitect: 'storyArchitecture',
-    emotionalArcDesigner: 'emotionalArc',
-    themeSymbolism: 'thematicElements',
-    qualityGate2: 'qualityGate2Result',
-    characterDesign: 'characterDesign',
-    worldDesign: 'worldDesign',
-    colorScript: 'colorScript',
-    visualIntegrator: 'visualBible',
-    qualityGate3: 'qualityGate3Result',
-    cinematographyIntegrator: 'cinematographyBible',
-    qualityGate4: 'qualityGate4Result',
-    audioIntegrator: 'audioBible',
-    qualityGate5: 'qualityGate5Result',
-    technicalIntegrator: 'technicalBible',
-    qualityGate6: 'qualityGate6Result',
-    masterIntegrator: 'masterPrompt',
-    qualityGate7: 'qualityGate7Result',
-    promptFormatter: 'finalFormattedPrompt',
-};
-
 
 // Generates a cache key based on agent name and a hash of its input.
 function getCacheKey(agentName: AgentName, input: any): string {
@@ -158,6 +27,8 @@ function getCacheKey(agentName: AgentName, input: any): string {
 }
 
 const getAgentInput = (agentName: AgentName, agentOutputs: Record<string, any>, initialInputs: any, revisionInfo?: any) => {
+    // This function is a candidate for further refactoring, but for now, its logic remains.
+    // A better long-term solution might involve agents declaring their own input dependencies.
     switch (agentName) {
       case 'imageAnalysis':
         return { imageData: initialInputs.seedImage?.split(',')[1] };
@@ -257,7 +128,6 @@ export async function executePipeline(
 ) {
   set({ isPipelineRunning: true, error: null });
 
-  // Use outputs directly from the store, which could be populated by importState
   const agentOutputs: Record<string, any> = {};
   Object.keys(agentToStateKeyMap).forEach(key => {
     const stateKey = agentToStateKeyMap[key as AgentName];
@@ -269,7 +139,6 @@ export async function executePipeline(
     }
   });
 
-  // Determine the starting point for the pipeline run.
   let startStageIndex = 0;
   if (revisionInfo) {
     // Logic for revision remains the same
@@ -281,17 +150,14 @@ export async function executePipeline(
     const firstAgentOfStage = stage[0];
     const moduleName = moduleMap[firstAgentOfStage];
 
-    // Check if we should skip this module based on macro-cache settings
     if (options.modulesToRunFromCache.has(moduleName)) {
         console.log(`Skipping module ${moduleName} due to cache setting.`);
-        // Set all agents in this module (and its stages) to success
         const moduleAgents = Object.keys(moduleMap).filter(key => moduleMap[key as AgentName] === moduleName);
         for(const agentKey of moduleAgents) {
             setStatus(set, agentKey as AgentName, 'success');
         }
-        continue; // Skip to the next module
+        continue; 
     }
-
 
     const stagePromises = stage
       .filter(agentName => {
