@@ -1,0 +1,5 @@
+{
+  "name": "Anime Cinematic Prompt System",
+  "description": "An advanced system for generating detailed, production-quality anime cinematic prompts by analyzing seed images and leveraging different AI agent modes for research and complex query handling.",
+  "requestFramePermissions": []
+}
