@@ -1,6 +1,6 @@
 // lib/agents/module3/character-design-agent.ts
 import { BaseAgent, AgentContext, AgentCritique } from '../base-agent';
-import { CharacterDesignInput, CharacterDesignOutput, CharacterDesignInputSchema, CharacterDesignOutputSchema, VisionValidatorOutput, ColorScriptOutput } from '../../../types/agents';
+import { CharacterDesignInput, CharacterDesignOutput, CharacterDesignInputSchema, CharacterDesignOutputSchema, VisionValidatorOutput, ColorScriptOutput } from '../../../../types/agents';
 import { CHARACTER_DESIGN_PROMPT } from '../../prompts/module3';
 
 export class CharacterDesignAgent extends BaseAgent<CharacterDesignInput, CharacterDesignOutput> {

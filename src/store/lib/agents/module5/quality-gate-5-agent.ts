@@ -1,6 +1,6 @@
 // lib/agents/module5/quality-gate-5-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { QualityGate5Input, QualityGate5Output, QualityGate5InputSchema, QualityGate5OutputSchema } from '../../../types/agents';
+import { QualityGate5Input, QualityGate5Output, QualityGate5InputSchema, QualityGate5OutputSchema } from '../../../../types/agents';
 import { QUALITY_GATE_5_PROMPT } from '../../prompts/module5';
 
 export class QualityGate5Agent extends BaseAgent<QualityGate5Input, QualityGate5Output> {

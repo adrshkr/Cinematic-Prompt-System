@@ -1,6 +1,6 @@
 // lib/agents/module7/master-integrator-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { MasterIntegratorInput, MasterIntegratorOutput, MasterIntegratorInputSchema, MasterIntegratorOutputSchema } from '../../../types/agents';
+import { MasterIntegratorInput, MasterIntegratorOutput, MasterIntegratorInputSchema, MasterIntegratorOutputSchema } from '../../../../types/agents';
 import { MASTER_INTEGRATOR_PROMPT } from '../../prompts/module7';
 
 export class MasterIntegratorAgent extends BaseAgent<MasterIntegratorInput, MasterIntegratorOutput> {

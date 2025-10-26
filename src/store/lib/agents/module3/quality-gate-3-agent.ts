@@ -1,6 +1,6 @@
 // lib/agents/module3/quality-gate-3-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { QualityGate3Input, QualityGate3Output, QualityGate3InputSchema, QualityGate3OutputSchema } from '../../../types/agents';
+import { QualityGate3Input, QualityGate3Output, QualityGate3InputSchema, QualityGate3OutputSchema } from '../../../../types/agents';
 import { QUALITY_GATE_3_PROMPT } from '../../prompts/module3';
 
 export class QualityGate3Agent extends BaseAgent<QualityGate3Input, QualityGate3Output> {

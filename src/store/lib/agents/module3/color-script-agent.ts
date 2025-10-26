@@ -1,6 +1,6 @@
 // lib/agents/module3/color-script-agent.ts
 import { BaseAgent, AgentContext, AgentCritique } from '../base-agent';
-import { ColorScriptInput, ColorScriptOutput, ColorScriptInputSchema, ColorScriptOutputSchema, EmotionalArcDesignerOutput } from '../../../types/agents';
+import { ColorScriptInput, ColorScriptOutput, ColorScriptInputSchema, ColorScriptOutputSchema, EmotionalArcDesignerOutput } from '../../../../types/agents';
 import { COLOR_SCRIPT_PROMPT } from '../../prompts/module3';
 
 export class ColorScriptAgent extends BaseAgent<ColorScriptInput, ColorScriptOutput> {

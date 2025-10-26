@@ -1,6 +1,6 @@
 // lib/agents/module4/motion-choreographer-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { MotionChoreographerInput, MotionChoreographerOutput, MotionChoreographerInputSchema, MotionChoreographerOutputSchema } from '../../../types/agents';
+import { MotionChoreographerInput, MotionChoreographerOutput, MotionChoreographerInputSchema, MotionChoreographerOutputSchema } from '../../../../types/agents';
 import { MOTION_CHOREOGRAPHER_PROMPT } from '../../prompts/module4';
 
 export class MotionChoreographerAgent extends BaseAgent<MotionChoreographerInput, MotionChoreographerOutput> {

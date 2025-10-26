@@ -1,6 +1,6 @@
 // lib/agents/module2/story-architect-agent.ts
 import { BaseAgent, AgentContext, AgentCritique } from '../base-agent';
-import { StoryArchitectInput, StoryArchitectOutput, StoryArchitectInputSchema, StoryArchitectOutputSchema, VisionValidatorOutput } from '../../../types/agents';
+import { StoryArchitectInput, StoryArchitectOutput, StoryArchitectInputSchema, StoryArchitectOutputSchema, VisionValidatorOutput } from '../../../../types/agents';
 import { STORY_ARCHITECT_PROMPT } from '../../prompts/module2';
 
 export class StoryArchitectAgent extends BaseAgent<StoryArchitectInput, StoryArchitectOutput> {

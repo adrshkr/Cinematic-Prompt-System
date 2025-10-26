@@ -1,6 +1,6 @@
 // lib/agents/module3/visual-integrator-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { VisualIntegratorInput, VisualIntegratorOutput, VisualIntegratorInputSchema, VisualIntegratorOutputSchema } from '../../../types/agents';
+import { VisualIntegratorInput, VisualIntegratorOutput, VisualIntegratorInputSchema, VisualIntegratorOutputSchema } from '../../../../types/agents';
 import { VISUAL_INTEGRATION_PROMPT } from '../../prompts/module3';
 
 export class VisualIntegratorAgent extends BaseAgent<VisualIntegratorInput, VisualIntegratorOutput> {

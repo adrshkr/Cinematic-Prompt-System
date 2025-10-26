@@ -1,6 +1,6 @@
 // lib/agents/module6/animation-technique-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { AnimationTechniqueInput, AnimationTechniqueOutput, AnimationTechniqueInputSchema, AnimationTechniqueOutputSchema } from '../../../types/agents';
+import { AnimationTechniqueInput, AnimationTechniqueOutput, AnimationTechniqueInputSchema, AnimationTechniqueOutputSchema } from '../../../../types/agents';
 import { ANIMATION_TECHNIQUE_PROMPT } from '../../prompts/module6';
 
 export class AnimationTechniqueAgent extends BaseAgent<AnimationTechniqueInput, AnimationTechniqueOutput> {

@@ -1,6 +1,6 @@
 // lib/agents/module5/sound-design-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { SoundDesignInput, SoundDesignOutput, SoundDesignInputSchema, SoundDesignOutputSchema } from '../../../types/agents';
+import { SoundDesignInput, SoundDesignOutput, SoundDesignInputSchema, SoundDesignOutputSchema } from '../../../../types/agents';
 import { SOUND_DESIGN_PROMPT } from '../../prompts/module5';
 
 export class SoundDesignAgent extends BaseAgent<SoundDesignInput, SoundDesignOutput> {

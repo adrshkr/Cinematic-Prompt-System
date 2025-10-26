@@ -1,6 +1,6 @@
 // lib/agents/module2/theme-symbolism-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { ThemeSymbolismInput, ThemeSymbolismOutput, ThemeSymbolismInputSchema, ThemeSymbolismOutputSchema } from '../../../types/agents';
+import { ThemeSymbolismInput, ThemeSymbolismOutput, ThemeSymbolismInputSchema, ThemeSymbolismOutputSchema } from '../../../../types/agents';
 import { THEME_SYMBOLISM_PROMPT } from '../../prompts/module2';
 
 export class ThemeSymbolismAgent extends BaseAgent<ThemeSymbolismInput, ThemeSymbolismOutput> {

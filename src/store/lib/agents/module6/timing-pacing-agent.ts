@@ -1,6 +1,6 @@
 // lib/agents/module6/timing-pacing-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { TimingPacingInput, TimingPacingOutput, TimingPacingInputSchema, TimingPacingOutputSchema } from '../../../types/agents';
+import { TimingPacingInput, TimingPacingOutput, TimingPacingInputSchema, TimingPacingOutputSchema } from '../../../../types/agents';
 import { TIMING_PACING_PROMPT } from '../../prompts/module6';
 
 export class TimingPacingAgent extends BaseAgent<TimingPacingInput, TimingPacingOutput> {

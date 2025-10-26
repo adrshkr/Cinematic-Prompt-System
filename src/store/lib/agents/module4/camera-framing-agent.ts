@@ -1,6 +1,6 @@
 // lib/agents/module4/camera-framing-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { CameraFramingInput, CameraFramingOutput, CameraFramingInputSchema, CameraFramingOutputSchema } from '../../../types/agents';
+import { CameraFramingInput, CameraFramingOutput, CameraFramingInputSchema, CameraFramingOutputSchema } from '../../../../types/agents';
 import { CAMERA_FRAMING_PROMPT } from '../../prompts/module4';
 
 export class CameraFramingAgent extends BaseAgent<CameraFramingInput, CameraFramingOutput> {
