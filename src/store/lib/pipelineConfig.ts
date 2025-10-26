@@ -1,6 +1,6 @@
 // src/lib/pipelineConfig.ts
 import { agentRegistry } from './agents/registry';
-import { PipelineState } from '../store/store';
+import { PipelineState } from '../store.ts';
 
 export type AgentName = keyof typeof agentRegistry;
 

@@ -1,6 +1,6 @@
 // lib/agents/module5/dialogue-director-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { DialogueDirectorInput, DialogueDirectorOutput, DialogueDirectorInputSchema, DialogueDirectorOutputSchema } from '../../../types/agents';
+import { DialogueDirectorInput, DialogueDirectorOutput, DialogueDirectorInputSchema, DialogueDirectorOutputSchema } from '../../../../types/agents';
 import { DIALOGUE_DIRECTOR_PROMPT } from '../../prompts/module5';
 
 export class DialogueDirectorAgent extends BaseAgent<DialogueDirectorInput, DialogueDirectorOutput> {

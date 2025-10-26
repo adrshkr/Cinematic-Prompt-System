@@ -1,6 +1,6 @@
 // lib/agents/module4/cinematography-integrator-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { CinematographyIntegratorInput, CinematographyIntegratorOutput, CinematographyIntegratorInputSchema, CinematographyIntegratorOutputSchema } from '../../../types/agents';
+import { CinematographyIntegratorInput, CinematographyIntegratorOutput, CinematographyIntegratorInputSchema, CinematographyIntegratorOutputSchema } from '../../../../types/agents';
 import { CINEMATOGRAPHY_INTEGRATOR_PROMPT } from '../../prompts/module4';
 
 export class CinematographyIntegratorAgent extends BaseAgent<CinematographyIntegratorInput, CinematographyIntegratorOutput> {

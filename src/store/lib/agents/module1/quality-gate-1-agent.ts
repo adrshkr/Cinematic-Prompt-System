@@ -1,6 +1,6 @@
 // lib/agents/module1/quality-gate-1-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { QualityGate1Input, QualityGate1Output, QualityGate1InputSchema, QualityGate1OutputSchema } from '../../../types/agents';
+import { QualityGate1Input, QualityGate1Output, QualityGate1InputSchema, QualityGate1OutputSchema } from '../../../../types/agents';
 import { QUALITY_GATE_1_PROMPT } from '../../prompts/module1';
 import { z } from 'zod';
 

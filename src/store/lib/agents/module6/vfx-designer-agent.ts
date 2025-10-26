@@ -1,6 +1,6 @@
 // lib/agents/module6/vfx-designer-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { VFXDesignerInput, VFXDesignerOutput, VFXDesignerInputSchema, VFXDesignerOutputSchema } from '../../../types/agents';
+import { VFXDesignerInput, VFXDesignerOutput, VFXDesignerInputSchema, VFXDesignerOutputSchema } from '../../../../types/agents';
 import { VFX_DESIGNER_PROMPT } from '../../prompts/module6';
 
 export class VFXDesignerAgent extends BaseAgent<VFXDesignerInput, VFXDesignerOutput> {

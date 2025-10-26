@@ -1,6 +1,6 @@
 // lib/agents/module4/lighting-director-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { LightingDirectorInput, LightingDirectorOutput, LightingDirectorInputSchema, LightingDirectorOutputSchema } from '../../../types/agents';
+import { LightingDirectorInput, LightingDirectorOutput, LightingDirectorInputSchema, LightingDirectorOutputSchema } from '../../../../types/agents';
 import { LIGHTING_DIRECTOR_PROMPT } from '../../prompts/module4';
 
 export class LightingDirectorAgent extends BaseAgent<LightingDirectorInput, LightingDirectorOutput> {

@@ -1,6 +1,6 @@
 // lib/agents/module5/music-composer-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { MusicComposerInput, MusicComposerOutput, MusicComposerInputSchema, MusicComposerOutputSchema } from '../../../types/agents';
+import { MusicComposerInput, MusicComposerOutput, MusicComposerInputSchema, MusicComposerOutputSchema } from '../../../../types/agents';
 import { MUSIC_COMPOSER_PROMPT } from '../../prompts/module5';
 
 export class MusicComposerAgent extends BaseAgent<MusicComposerInput, MusicComposerOutput> {

@@ -1,6 +1,6 @@
 // lib/agents/module5/audio-integrator-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { AudioIntegratorInput, AudioIntegratorOutput, AudioIntegratorInputSchema, AudioIntegratorOutputSchema } from '../../../types/agents';
+import { AudioIntegratorInput, AudioIntegratorOutput, AudioIntegratorInputSchema, AudioIntegratorOutputSchema } from '../../../../types/agents';
 import { AUDIO_INTEGRATOR_PROMPT } from '../../prompts/module5';
 
 export class AudioIntegratorAgent extends BaseAgent<AudioIntegratorInput, AudioIntegratorOutput> {

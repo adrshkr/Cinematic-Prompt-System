@@ -1,6 +1,6 @@
 // lib/agents/module6/technical-integrator-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { TechnicalIntegratorInput, TechnicalIntegratorOutput, TechnicalIntegratorInputSchema, TechnicalIntegratorOutputSchema } from '../../../types/agents';
+import { TechnicalIntegratorInput, TechnicalIntegratorOutput, TechnicalIntegratorInputSchema, TechnicalIntegratorOutputSchema } from '../../../../types/agents';
 import { TECHNICAL_INTEGRATOR_PROMPT } from '../../prompts/module6';
 
 export class TechnicalIntegratorAgent extends BaseAgent<TechnicalIntegratorInput, TechnicalIntegratorOutput> {

@@ -1,6 +1,6 @@
 // lib/agents/module2/emotional-arc-designer-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { EmotionalArcDesignerInput, EmotionalArcDesignerOutput, EmotionalArcDesignerInputSchema, EmotionalArcDesignerOutputSchema } from '../../../types/agents';
+import { EmotionalArcDesignerInput, EmotionalArcDesignerOutput, EmotionalArcDesignerInputSchema, EmotionalArcDesignerOutputSchema } from '../../../../types/agents';
 import { EMOTIONAL_ARC_DESIGNER_PROMPT } from '../../prompts/module2';
 
 export class EmotionalArcDesignerAgent extends BaseAgent<EmotionalArcDesignerInput, EmotionalArcDesignerOutput> {

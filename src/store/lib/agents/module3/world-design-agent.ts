@@ -1,6 +1,6 @@
 // lib/agents/module3/world-design-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { WorldDesignInput, WorldDesignOutput, WorldDesignInputSchema, WorldDesignOutputSchema } from '../../../types/agents';
+import { WorldDesignInput, WorldDesignOutput, WorldDesignInputSchema, WorldDesignOutputSchema } from '../../../../types/agents';
 import { WORLD_DESIGN_PROMPT } from '../../prompts/module3';
 
 export class WorldDesignAgent extends BaseAgent<WorldDesignInput, WorldDesignOutput> {

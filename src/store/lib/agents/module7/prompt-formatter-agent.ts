@@ -1,6 +1,6 @@
 // lib/agents/module7/prompt-formatter-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
-import { PromptFormatterInput, PromptFormatterOutput, PromptFormatterInputSchema, PromptFormatterOutputSchema } from '../../../types/agents';
+import { PromptFormatterInput, PromptFormatterOutput, PromptFormatterInputSchema, PromptFormatterOutputSchema } from '../../../../types/agents';
 import { PROMPT_FORMATTER_PROMPT } from '../../prompts/module7';
 import { formatISO } from 'date-fns';
 
