@@ -1,0 +1,1917 @@
+{
+  "title": "Whispers of the Bioluminescent Grove — Luminous Resonance v2.0 Master Director's Cut",
+  "version": "v2.0_masterclass_production_ready",
+  "project_code": "WBG-LR-2025",
+  "role": "Visionary animation auteur orchestrating a transcendent hand-drawn 2D cel anime opus with Makoto Shinkai-level environmental poetry, Miyazaki's living world philosophy, and Yutaka Nakamura's explosive yet delicate sakuga choreography. This director commands frame-perfect timing, builds emotional crescendos through pure visual storytelling, and treats every frame as a painting worthy of the Louvre.",
+  
+  "studio_style": [
+    "Kyoto Animation precision with obsessive character acting",
+    "Studio Ghibli environmental storytelling and breathing world",
+    "CoMix Wave Films luminous aesthetics and light poetry",
+    "Wit Studio's dramatic camera work",
+    "Hand-drawn 2D cel with premium in-betweening on ones where needed"
+  ],
+  
+  "technical_specs": {
+    "resolution": "4K (3840×2160) with 6K overscan for reframing",
+    "duration": "15 seconds exact (360 frames @ 24fps)",
+    "fps": "24fps true with selective animation on ones for impact moments",
+    "codec": "ProRes 4444 XQ for maximum color depth",
+    "compression": "Lossless with 12-bit color",
+    "bit_depth": "12-bit for extended color grading headroom",
+    "color_space": "DCI-P3 wide gamut",
+    "color_pipeline": "ACES workflow → BT.2020 → BT.709 with filmic tone mapping",
+    "gamma": "2.4 with selective HDR highlights",
+    "deliverable": "DPX sequence + ProRes master + H.265 preview",
+    "aspect_ratio": "2.35:1 cinemascope with integrated letterboxing",
+    "safe_zones": "Title safe 90%, action safe 93%"
+  },
+  
+  "art_direction": {
+    "rendering_philosophy": "Every frame a painting; no frame is transition filler",
+    "rendering_style": "Strictly 2D hand-drawn cel animation with hand-painted backgrounds; premium TV paint textures; real watercolor background washes with digital enhancement; visible pencil energy in line art; selective rough cleanup for emotional moments",
+    "line_art": {
+      "weight": "Variable 0.3mm-2.5mm based on depth",
+      "style": "Tapered ends for organic forms; bold holds on character; broken lines for distant elements",
+      "color": "Deep indigo for characters; colored lines for flora (cyan/magenta)",
+      "cleanup": "Selective rough for hair/fabric; clean for face/hands"
+    },
+    "palette": {
+      "base": "Deep twilight blues (#1a2f4a) to vibrant bioluminescent cyans (#00ffff)",
+      "accents": "Mystic magentas (#ff00ff), ethereal golds (#ffd700), pearl whites (#f8f8ff)",
+      "shadows": "Never pure black; always deep purple-blue (#0d0221)",
+      "highlights": "Never pure white except light sources; warm off-whites (#fffef5)",
+      "mood_progression": "Cool mysterious → warm magical → transcendent prismatic"
+    },
+    "shading": {
+      "method": "Classic anime two-tone cel shading with painted light overlays",
+      "shadow_layers": "Base shadow + deep shadow + reflected light + rim light + special glow",
+      "no_gradients": "Hard edge shadows only; gradients only in backgrounds and effects"
+    },
+    "textures": "Subtle paper grain overlay at 5% opacity; watercolor blooms in backgrounds; crystalline refractions",
+    "text_elements": "Hidden elvish runes in foliage that spell protection spells"
+  },
+  
+  "character": {
+    "name": "Eira Lunasylph, Keeper of Forgotten Light",
+    "age": "Appears 19 in human years; actually 247 years old",
+    "archetype": "Ethereal scholar-mystic discovering ancient resonances; last of the Grove Speakers",
+    "backstory": "Raised by moon moths after village destroyed; learned to speak in light frequencies",
+    
+    "body": {
+      "height": "5'7\" (170cm)",
+      "build": "Willowy dancer's frame with bird-hollow bones; moves like underwater",
+      "silhouette": "Distinctive teardrop shape when cape spreads; recognizable in shadow",
+      "skin": {
+        "base": "Translucent alabaster with subcutaneous azure veining",
+        "details": "Veins pulse faintly with heartbeat (70bpm); more visible when using magic",
+        "luminescence": "Pearl-dust iridescence at: clavicles, inner wrists, temples, spine",
+        "markings": "Constellation birthmarks on left shoulder blade; they shift like real stars",
+        "texture": "Porcelain smooth with subtle subsurface scattering"
+      },
+      "hands": {
+        "structure": "Elongated pianist fingers; 1.3x normal proportion",
+        "details": "Naturally luminescent nail beds fade from pink to cyan tips",
+        "gestures": "Specific mudras for different magical resonances; pinky extends when curious",
+        "animation": "Always last to complete movements; 3-frame follow-through"
+      },
+      "posture": "Slight forward lean when walking; shoulders back when confident; micro-sways when still"
+    },
+    
+    "face": {
+      "structure": "Elfin oval; 1:1.3 width-to-height ratio; neotenic proportions",
+      "skull": "High forehead; defined temporal hollows; delicate jaw angle at 110°",
+      "cheekbones": "Glass-sharp zygomatic arch; catches light from below",
+      "chin": "Delicate point with subtle dimple; trembles when emotional",
+      "nose": "Small, upturned; nostrils flare at new scents (frame 72, 198, 267)",
+      
+      "eyes": {
+        "size": "1.3x realistic anime proportion; takes up 1/5 of face height",
+        "shape": "Almond with upward tilt at 7°; inner corner lower than outer",
+        "iris": {
+          "structure": "Tri-layered crystalline formation visible at close-up",
+          "color": "Base amethyst (#9966cc) with cyan inner ring and gold flecks",
+          "pattern": "Fractal kaleidoscope that rotates slowly clockwise",
+          "reactivity": "Dilates from 3mm to 7mm based on magic levels",
+          "special": "Reflects memories in extreme close-ups"
+        },
+        "sclera": "Faint blue tint; visible blood vessels at emotional peaks",
+        "lashes": "Thick, dark; cast shadows on cheeks; individual lash animation on blinks",
+        "tears": "Would glow cyan if shed; refracts rainbow at edges",
+        "catchlight": "Always double: one from primary light, one from staff",
+        "blink_rate": "Every 4-6 seconds; slow blinks show trust"
+      },
+      
+      "eyebrows": "Silver wisps that catch light like fiber optics; independent animation",
+      "lips": {
+        "shape": "Rosebud with defined cupid's bow; lower lip fuller",
+        "color": "Natural moonstone sheen; subtle blue undertone",
+        "animation": "Parts slightly when wondering; purses when concentrating",
+        "detail": "Faint breath fog in cool air"
+      },
+      
+      "micro_expressions": [
+        "T=0.3s: Right eyebrow raises 2mm sensing magic",
+        "T=2.7s: Eyes widen 1.5x at first flora response",
+        "T=5.4s: Nostril flare catching luminous pollen scent",
+        "T=6.2s: Slight smile starts at left corner",
+        "T=8.1s: Jaw relaxes showing growing comfort",
+        "T=11.8s: Full genuine smile with eye crinkles",
+        "T=14.2s: Serene expression with half-lid eyes"
+      ]
+    },
+    
+    "hair": {
+      "length": "Waist-length; longest strands reach hip bones",
+      "style": "Liquid mercury cascade with anti-gravity float sections",
+      "color": "Silver-white base with prismatic refractions in light",
+      "structure": {
+        "main_body": "Flowing mass with 5 distinct animation zones",
+        "special_sections": "Two face-framing tendrils always float upward",
+        "braid": "Single thin braid behind left ear with woven starlight thread",
+        "baby_hair": "Wispy frame around forehead; moves independently"
+      },
+      "physics": {
+        "weight": "0.3x earth gravity; floats in magical currents",
+        "lag": "3-frame secondary motion on all movements",
+        "settle": "8-frame settle time with decreasing amplitude",
+        "wind_response": "Individual strand breakaway at 15mph equivalent"
+      },
+      "magical_properties": {
+        "luminescence": "Tips emit soft photons near magic sources",
+        "color_shift": "Subtle aurora borealis effect in bright light",
+        "special_animation": "Spreads into mandala pattern during power moments"
+      }
+    },
+    
+    "costume": {
+      "concept": "Living textile that breathes with magic; haute couture meets ancient priestess",
+      "material": {
+        "base": "Woven from lunar moth silk and liquified aurora borealis",
+        "properties": "Semi-translucent; opacity shifts 20-80% based on ambient magic",
+        "texture": "Smooth as water; no visible weave except at macro level"
+      },
+      "design": {
+        "silhouette": "Asymmetrical draped gown; off-left-shoulder",
+        "length": "Ankle with irregular hem; 6 inch train that defies physics",
+        "layers": [
+          "Base slip in pearl white",
+          "Overdress with constellation embroidery",
+          "Ethereal cape that billows without wind"
+        ],
+        "neckline": "Boat neck transitioning to one-shoulder; reveals constellation birthmarks"
+      },
+      "embroidery": {
+        "pattern": "Living star charts that actually rotate",
+        "special_detail": "Big Dipper migrates across fabric during sequence",
+        "thread": "Captured starlight and crystallized moonbeams",
+        "glow": "Embroidery brightness responds to emotional state"
+      },
+      "animation": {
+        "cloth_dynamics": "12-point mesh simulation with magical lift vectors",
+        "breathing": "Expands 3% on inhales with 0.3s delay",
+        "flutter": "Constant micro-movements even in still air",
+        "special": "Hem leaves light trails during rapid movement"
+      },
+      "accessories": {
+        "belt": "Braided silver light; knot changes based on mood",
+        "shoulder_brooch": "Living crystal butterfly; occasionally flutters wings"
+      }
+    },
+    
+    "staff": {
+      "name": "Stellarion, the Star Speaker",
+      "height": "6 feet (1.8m); 1 foot taller than wielder",
+      "material": "Crystallized starlight wrapped in silver birch from the first forest",
+      "crystal": {
+        "type": "Multifaceted star sapphire; 14cm diameter",
+        "properties": "Contains captured nebula; rotates independently",
+        "glow": "Base 500 lumens; peaks at 2000 lumens during power moments",
+        "refraction": "Splits light into 7 distinct rainbow beams"
+      },
+      "details": "Ancient runes pulse along length; grip worn smooth by centuries",
+      "animation": "Subtle vibration at 432Hz; creates light particles when moved"
+    },
+    
+    "movement_philosophy": {
+      "principle": "Every gesture is deliberate poetry; no movement without meaning",
+      "timing": {
+        "anticipation": "Weight shifts precede actions by 2 frames",
+        "follow_through": "Extremities complete actions 3 frames after body",
+        "settling": "All movements settle with 3 decreasing oscillations"
+      },
+      "character_keys": [
+        "Fingertips always last to complete actions",
+        "Head tilts slightly opposite to body movement",
+        "Blinks happen 2 frames before head turns",
+        "Fabric and hair lag all movements by different amounts"
+      ]
+    },
+    
+    "acting_beats": [
+      "Wonder: Eyes widen → pupils dilate → lips part → hand to chest",
+      "Discovery: Eyebrow raise → head tilt → lean forward → reach out",
+      "Connection: Soft exhale → shoulders drop → genuine smile → eye softening",
+      "Transcendence: Deep breath → arms spread → head back → light emanation"
+    ]
+  },
+  
+  "environment": {
+    "location": "The Forgotten Grove of First Light; exists between dimensions",
+    "history": "Where the first star's light touched earth; birthplace of bioluminescence",
+    "time": "Eternal twilight; neither day nor night",
+    "temperature": "68°F (20°C) with 80% humidity creating constant mist",
+    
+    "layout": {
+      "entrance": "Natural archway of intertwined luminous willows",
+      "main_clearing": "40-foot diameter circle of soft moss",
+      "sacred_pool": "Crystal-clear 20-foot pool reflecting impossible depths",
+      "ancient_trees": "Seven sentinel trees, each 300 feet tall, hollowed with age",
+      "hidden_shrine": "Barely visible ancient altar covered in glowing moss"
+    },
+    
+    "flora": {
+      "lumina_bloom": {
+        "appearance": "Translucent petals with visible light-veins",
+        "behavior": "Responds to emotional resonance; 8-second pulse cycle",
+        "colors": "Shifts from cyan to magenta based on viewer's intent",
+        "special": "Releases memory spores when touched"
+      },
+      "glow_cap_mushrooms": {
+        "appearance": "Classic fairy ring formation; 6-inch tall",
+        "network": "Connected by visible golden mycelium threads",
+        "pulse": "Synchronized breathing with 3-second interval",
+        "spores": "Release on emotional peaks; create light trails"
+      },
+      "whisper_vines": {
+        "appearance": "Translucent green with flowing light inside",
+        "behavior": "Reaches toward conscious beings; records touches",
+        "special": "Plays back emotional echoes of past visitors"
+      },
+      "crystal_ferns": {
+        "appearance": "Actual crystalline structure; tinkles in breeze",
+        "colors": "Refracts ambient light into rainbow patterns",
+        "growth": "Grows one frond per century; oldest has 12 fronds"
+      },
+      "moon_lilies": {
+        "location": "Float impossibly on sacred pool surface",
+        "glow": "Soft white with blue center; 800 lumens each",
+        "behavior": "Orient toward strongest emotional presence"
+      }
+    },
+    
+    "fauna_hints": [
+      "Luminous butterflies that write light-poems in air",
+      "Invisible except for glowing eyes in background",
+      "Hummingbird made of pure light visits at T=7.3s",
+      "Ancient guardian spirit visible for 1 frame at T=13.5s"
+    ],
+    
+    "atmospheric_effects": {
+      "mist": {
+        "density": "Variable 5-25% opacity",
+        "behavior": "Swirls in impossible patterns; responds to movement",
+        "layers": "5 distinct parallax layers with different speeds",
+        "interaction": "Parts around Eira creating wake patterns"
+      },
+      "floating_particles": {
+        "spores": "2,847 unique particles with individual paths",
+        "pollen": "Golden motes that spiral in fibonacci patterns",
+        "light_wisps": "Sentient light beings; curious about Eira",
+        "dust": "Prismatic crystal dust; creates lens flares"
+      },
+      "ambient_motion": [
+        "Constant gentle breeze without source",
+        "Leaves fall upward in certain spots",
+        "Water ripples from center outward with no cause",
+        "Light bends around certain trees"
+      ]
+    }
+  },
+  
+  "lighting_design": {
+    "philosophy": "Light as narrator; every source tells story",
+    "key_light": {
+      "source": "Collective bioluminescent flora",
+      "color": "Cyan-dominant (#00ffff) with magenta accents",
+      "intensity": "Variable 500-2000 lux based on emotional beats",
+      "animation": "Constant subtle pulsing at 0.5Hz base rate"
+    },
+    "fill_light": {
+      "source": "Sacred pool reflection and ambient grove glow",
+      "color": "Cool blue (#4169e1) with green undertones",
+      "intensity": "30% of key",
+      "special": "Creates under-lighting for ethereal effect"
+    },
+    "rim_light": {
+      "source": "Staff crystal and strategic background elements",
+      "color": "Pure white with prismatic edges",
+      "intensity": "200% of key on edges only",
+      "width": "2-pixel variable based on movement speed"
+    },
+    "practical_lights": [
+      "Each mushroom: 50 lumens warm white",
+      "Lumina blooms: 100-500 lumens variable",
+      "Staff crystal: 500-2000 lumens with color temperature shifts",
+      "Sacred pool: 1000 lumens reflected moonlight",
+      "Eira's eyes: 5 lumens when channeling magic"
+    ],
+    "special_effects": {
+      "godrays": "Hand-drawn light shafts through mist",
+      "caustics": "Animated water reflections on nearby surfaces",
+      "halation": "Deliberate bloom on all light sources",
+      "chromatic_aberration": "3-pixel RGB split on bright edges",
+      "lens_flares": "Anamorphic blue streaks from crystal"
+    },
+    "color_grading": {
+      "base_lut": "Teal and orange with lifted blacks",
+      "shadow_tint": "Deep purple (#4b0082)",
+      "highlight_tint": "Warm gold (#ffd700)",
+      "midtone_pivot": "Shifted toward cyan"
+    }
+  },
+  
+  "shot_list": [
+    {
+      "id": 1,
+      "duration": "0.0–1.2s",
+      "frame_range": "1-29",
+      "shot_type": "EPIC WIDE ESTABLISHING",
+      "composition": {
+        "rule": "Divine proportion; Eira at golden ratio point",
+        "focal_length": "18mm equivalent for environment grandeur",
+        "depth": "Deep focus with subtle foreground blur"
+      },
+      "camera_movement": {
+        "type": "Steadicam push with handheld breathe",
+        "speed": "Slow acceleration from 0 to 2 units/second",
+        "path": "Subtle S-curve approach",
+        "micro_movement": "2px random drift for organic feel"
+      },
+      "action": {
+        "primary": "Eira parts luminous willow curtains with staff tip",
+        "secondary": "Anticipation breath; weight shift at 0.3s",
+        "details": "Fingers adjust grip at 0.5s; pause sensing space at 0.7s"
+      },
+      "character_animation": {
+        "body": "Weight on back foot → forward lean → step through",
+        "face": "Curious → cautious → wonder",
+        "hair": "Billows backward from movement; 18-frame settle",
+        "costume": "Catches on willows briefly; pulls free with light scatter"
+      },
+      "environment_animation": {
+        "willows": "Part like water; continue swaying 8 frames after",
+        "spores": "27 unique particles with Brownian motion",
+        "mist": "5-layer parallax; parts around Eira"
+      },
+      "lighting": {
+        "key": "Rembrandt from left fungi cluster",
+        "fill": "Ambient grove glow at 30%",
+        "rim": "Staff practical at 200%",
+        "special": "Light scatter through willow strands"
+      },
+      "sound": {
+        "sfx": "Breathy gasp 0.3s; silk rustle; willow whisper",
+        "music": "Ambient pad enters; harp glissando on reveal"
+      },
+      "transition_out": "Match cut on staff crystal glow"
+    },
+    
+    {
+      "id": 2,
+      "duration": "1.2–2.2s",
+      "frame_range": "29-53",
+      "shot_type": "EXTREME CLOSE-UP - STAFF CRYSTAL",
+      "composition": {
+        "framing": "Crystal fills 80% of frame",
+        "angle": "Low angle for power",
+        "focus": "Macro with bokeh background"
+      },
+      "camera_movement": {
+        "type": "Micro dolly in with rotation",
+        "detail": "5° clockwise orbit while pushing"
+      },
+      "action": {
+        "primary": "Crystal brightness builds from 500 to 1500 lumens",
+        "secondary": "Nebula inside crystal swirls faster",
+        "detail": "Individual facets light sequentially"
+      },
+      "vfx": {
+        "refraction": "7 rainbow beams emerge and rotate",
+        "particles": "Light motes birth from crystal surface",
+        "flare": "Anamorphic streak develops"
+      },
+      "transition_out": "Light bloom wipe to white"
+    },
+    
+    {
+      "id": 3,
+      "duration": "2.2–3.2s",
+      "frame_range": "53-77",
+      "shot_type": "PROFILE MEDIUM SHOT",
+      "composition": "Negative space ahead of Eira for looking room",
+      "camera_movement": {
+        "type": "Subtle arc around subject",
+        "speed": "15° orbit over shot duration"
+      },
+      "action": {
+        "primary": "Eira gazes into grove depths; hand rises toward light",
+        "face": "Wonder builds; pupils dilate from 3mm to 5mm",
+        "breath": "Visible exhale at 2.8s; shoulders relax"
+      },
+      "lighting_change": "Ambient increases 25% as grove responds",
+      "transition_out": "Whip pan right to..."
+    },
+    
+    {
+      "id": 4,
+      "duration": "3.2–3.8s",
+      "frame_range": "77-91",
+      "shot_type": "IMPACT INSERT - LUMINA BLOOM",
+      "composition": "Dutch angle 15° for dynamism",
+      "camera_movement": "Crash zoom with motion blur",
+      "action": {
+        "primary": "Lumina-bloom explosive efflorescence",
+        "detail": "24 petals unfurl in fibonacci spiral",
+        "timing": "Animation on ones; 48 unique drawings"
+      },
+      "sakuga_moment": true,
+      "vfx": {
+        "particles": "2,847 pollen motes with physics",
+        "light": "Overexpose 2 frames; HDR recovery",
+        "special": "Each petal has unique light vein animation"
+      },
+      "metaphor": "Bloom mirrors Eira's heart opening",
+      "transition_out": "Match dissolve on petal shape to..."
+    },
+    
+    {
+      "id": 5,
+      "duration": "3.8–5.0s",
+      "frame_range": "91-120",
+      "shot_type": "MACRO - HAND AND PETAL",
+      "focus": "Rack focus from finger to petal at 4.4s",
+      "action": {
+        "primary": "Fingertips graze glowing petal",
+        "response": "Petal brightens and releases memory spore",
+        "detail": "Light transfers from petal to skin; travels up arm"
+      },
+      "character_moment": "First direct magical connection",
+      "sound": "Crystalline chime in C major; whispered 'memory'"
+    },
+    
+    {
+      "id": 6,
+      "duration": "5.0–6.0s",
+      "frame_range": "120-144",
+      "shot_type": "EXTREME CLOSE-UP - EYES",
+      "composition": "Both eyes fill frame; bridge of nose visible",
+      "action": {
+        "primary": "Eyes widen; irises' fractal pattern accelerates",
+        "detail": "Tear forms but doesn't fall; catches light",
+        "reflection": "Grove reflected in eyes; brief vision of past"
+      },
+      "emotional_peak": "Recognition and connection moment",
+      "vfx": "Subtle light rays from irises"
+    },
+    
+    {
+      "id": 7,
+      "duration": "6.0–7.2s",
+      "frame_range": "144-173",
+      "shot_type": "OVER-SHOULDER WIDE",
+      "composition": "Eira frame left; grove stretches ahead",
+      "reveal": "Sacred pool becomes visible with lily lights",
+      "camera_movement": "Slow push over Eira's shoulder",
+      "environment": {
+        "pool": "Caustic patterns dance",
+        "lilies": "Orient toward Eira",
+        "mist": "Parts revealing deeper grove"
+      },
+      "sound": "Water lapping; distant ethereal choir"
+    },
+    
+    {
+      "id": 8,
+      "duration": "7.2–8.5s",
+      "frame_range": "173-204",
+      "shot_type": "LOW ANGLE VERTIGO SHOT",
+      "camera_technique": "Dolly zoom creating spatial distortion",
+      "composition": "Eira centered; ground plane tilts",
+      "revelation": {
+        "primary": "Fairy ring of conscious mushrooms surrounds her",
+        "detail": "Mushrooms pulse in sync with her heartbeat",
+        "meaning": "Grove recognizes her as Speaker"
+      },
+      "character_beat": {
+        "action": "Hand to heart; whispers 'Alive...'",
+        "subtitle": "Appears in elvish runes that glow"
+      },
+      "breakthrough": true
+    },
+    
+    {
+      "id": 9,
+      "duration": "8.5–9.5s",
+      "frame_range": "204-228",
+      "shot_type": "MEDIUM TRACKING SHOT",
+      "camera_movement": "Circle Eira counterclockwise",
+      "action": {
+        "primary": "Eira turns slowly, taking in full grove",
+        "staff": "Raised high; crystal pulses with heartbeat",
+        "hair": "Fans out in impossible spiral"
+      },
+      "environment_response": "Everything brightens as she turns to face it",
+      "lighting": "Rotating key light creates moving shadows"
+    },
+    
+    {
+      "id": 10,
+      "duration": "9.5–10.5s",
+      "frame_range": "228-252",
+      "shot_type": "INSERT - MUSHROOM NETWORK",
+      "composition": "Top-down view of fairy ring",
+      "reveal": "Golden mycelium threads visible connecting all",
+      "animation": {
+        "primary": "Pulse travels through network",
+        "timing": "Wave propagation at 3 units/second"
+      },
+      "meaning": "Showing interconnected consciousness"
+    },
+    
+    {
+      "id": 11,
+      "duration": "10.5–11.5s",
+      "frame_range": "252-276",
+      "shot_type": "PROFILE CLOSE-UP WITH SPORES",
+      "composition": "Rule of thirds; Eira right, spores left",
+      "action": {
+        "spores": "Drift past face in spiral patterns",
+        "character": "Eyes track spores; soft smile forms",
+        "detail": "One spore lands on nose; she doesn't brush away"
+      },
+      "lighting": "Each spore is tiny light source",
+      "metaphor": "Accepting grove's blessing"
+    },
+    
+    {
+      "id": 12,
+      "duration": "11.5–12.5s",
+      "frame_range": "276-300",
+      "shot_type": "UNDERWATER PERSPECTIVE",
+      "unique_angle": "Camera below pool surface looking up",
+      "composition": "Eira's reflection fragments into prisms",
+      "technical": {
+        "caustics": "Full simulation on face",
+        "refraction": "Snell's window effect",
+        "ripples": "12 overlapping wave systems"
+      },
+      "symbolic": "Seeing herself transformed by magic",
+      "transition": "Ripple wipe to..."
+    },
+    
+    {
+      "id": 13,
+      "duration": "12.5–13.5s",
+      "frame_range": "300-324",
+      "shot_type": "WIDE HERO SHOT",
+      "composition": "Eira centered; full grove visible",
+      "peak_moment": {
+        "action": "Arms spread; head back; channeling grove energy",
+        "vfx": "Light streams connect her to all flora",
+        "costume": "Becomes fully transparent revealing light body"
+      },
+      "environment": "Everything pulses in perfect synchronization",
+      "sound": "Full orchestral climax"
+    },
+    
+    {
+      "id": 14,
+      "duration": "13.5–14.5s",
+      "frame_range": "324-348",
+      "shot_type": "ASCENDING CRANE SHOT",
+      "camera_path": "Spiral up around Eira",
+      "reveal": "Grove from above shows mandala pattern",
+      "action": {
+        "primary": "Eira raises staff; tip ignites like star",
+        "response": "Light beam shoots upward",
+        "detail": "Her hair forms perfect mandala"
+      },
+      "transition_to_finale": "Continue ascending into..."
+    },
+    
+    {
+      "id": 15,
+      "duration": "14.5–15.0s",
+      "frame_range": "348-360",
+      "shot_type": "COSMIC PULL-OUT FINALE",
+      "camera_movement": {
+        "type": "Exponential zoom out",
+        "start": "ECU on Eira's eye",
+        "end": "Galaxy-wide shot"
+      },
+      "revelation": {
+        "stages": [
+          "Eye → Face → Full body → Grove → Forest → Continent → Planet → Star system",
+          "Grove becomes single light point among constellation"
+        ],
+        "meaning": "One node in network of hidden sanctuaries"
+      },
+      "final_moment": {
+        "action": "Eira's light signal answered by distant points",
+        "hold": "Final frame holds 1.5 seconds past 15s",
+        "emotion": "Transcendence and purpose realized"
+      },
+      "sound": {
+        "music": "Ethereal choir holds high C",
+        "effect": "Cosmic wind and distant chimes"
+      }
+    }
+  ],
+  
+  "animation_principles": {
+    "timing_charts": {
+      "flora_pulse": "Based on fibonacci sequence: 1,1,2,3,5,8 frame intervals",
+      "spore_drift": "Perlin noise with 0.3 turbulence",
+      "water_ripples": "Sine wave with decay function"
+    },
+    "smear_frames": {
+      "usage": "All movements over 5 units/frame",
+      "style": "3-frame multiples; chromatic split on direction",
+      "special": "Hair creates light trails with 5-frame persistence"
+    },
+    "effects_animation": {
+      "philosophy": "All hand-drawn; no digital post effects",
+      "light_effects": "3-pass: base, glow, sparkle",
+      "particle_counts": {
+        "spores": "Minimum 50 per frame",
+        "pollen": "Minimum 100 per frame",
+        "light_motes": "Minimum 30 per frame"
+      }
+    },
+    "character_animation": {
+      "facial": "Full animation even in wide shots",
+      "hair_simulation": "5-point IK chain per section",
+      "cloth": "12-bone mesh with gravity defiance",
+      "breathing": "Constant at 12 breaths/minute"
+    },
+    "sakuga_moments": [
+      "Frame 77-91: Bloom explosion",
+      "Frame 180-190: Mushroom synchronization",
+      "Frame 300-310: Transformation peak",
+      "Frame 348-355: Cosmic reveal"
+    ]
+  },
+  
+  "audio_design": {
+    "music": {
+      "genre": "Ethereal ambient with orchestral climax",
+      "instruments": {
+        "lead": "Glass harmonica and waterphone",
+        "harmony": "String quartet with extreme sul ponticello",
+        "rhythm": "No drums; rhythm from harp and koto",
+        "texture": "Reversed vocals and wine glass orchestra"
+      },
+      "structure": {
+        "0-3s": "Ambient entry; single note drone",
+        "3-6s": "Melody enters; minor pentatonic",
+        "6-9s": "Harmony builds; add string tremolo",
+        "9-12s": "Full arrangement; choir enters",
+        "12-15s": "Climax and resolution to major"
+      },
+      "key": "D minor → F major",
+      "tempo": "60 BPM with rubato"
+    },
+    "sound_effects": {
+      "character": {
+        "footsteps": "Barely audible; moss cushion",
+        "breathing": "Audible at emotional peaks only",
+        "costume": "Silk whispers; crystalline chimes from movement",
+        "staff": "Low hum at 432Hz; chimes on contact"
+      },
+      "environment": {
+        "ambience": "Living forest breathing",
+        "water": "Gentle lapping with underwater resonance",
+        "flora": "Each species has unique sound",
+        "particles": "Shimmer and tinkle layer"
+      }
+    },
+    "foley_details": [
+      "Record actual silk for costume",
+      "Wine glass rims for crystal resonance",
+      "Wind through leaves for whispers",
+      "Tibetan bowls for mushroom pulses"
+    ],
+    "mix": {
+      "philosophy": "Music and effects equal importance",
+      "dynamics": "40dB range; whisper to forte",
+      "spatialization": "Full 7.1.4 Atmos mix"
+    },
+    "sync_points": [
+      "T=1.5s: First bloom pulse with chime",
+      "T=3.8s: Explosion with orchestral hit",
+      "T=6.0s: Eye moment with vocal swell",
+      "T=8.3s: 'Alive' with silence break",
+      "T=11.5s: Underwater with filtered audio",
+      "T=13.5s: Transformation with full choir",
+      "T=15.0s: Final hold with sustaining C"
+    ]
+  },
+  
+  "emotional_journey": {
+    "act_1_discovery": {
+      "0-3s": "Trepidation → Curiosity → First Wonder",
+      "visual": "Closed posture opens gradually",
+      "color": "Cool blues warming"
+    },
+    "act_2_connection": {
+      "3-6s": "Wonder → Recognition → Understanding",
+      "visual": "Reaching out; making contact",
+      "color": "Introducing magentas"
+    },
+    "act_3_recognition": {
+      "6-9s": "Understanding → Acceptance → Joy",
+      "visual": "Surrounded and embraced by grove",
+      "color": "Full spectrum emerging"
+    },
+    "act_4_transcendence": {
+      "9-12s": "Joy → Unity → Purpose",
+      "visual": "Becoming one with environment",
+      "color": "Gold entering palette"
+    },
+    "act_5_apotheosis": {
+      "12-15s": "Purpose → Transcendence → Cosmic Awareness",
+      "visual": "Individual becomes universal",
+      "color": "All colors in harmony"
+    }
+  },
+  
+  "easter_eggs": {
+    "frame_specific": [
+      "Frame 13: Totoro silhouette in tree shadow",
+      "Frame 89: Fibonacci spiral in petal arrangement",
+      "Frame 144: Brief flash of Eira's destroyed village in eye",
+      "Frame 234: Constellation spells 'HOPE' in ancient script",
+      "Frame 301: Grove pattern forms Tree of Life symbol",
+      "Frame 359: Other groves visible as constellation match real stars"
+    ],
+    "animation_homages": [
+      "Frame 77-91: Yutaka Nakamura impact frames",
+      "Frame 180: Miyazaki's hair animation style",
+      "Frame 240: Makoto Shinkai lens flare",
+      "Frame 300: Satoshi Kon reality blend"
+    ],
+    "hidden_narrative": {
+      "mushroom_network": "Shows memories of previous Speakers",
+      "staff_crystal": "Contains trapped star literally",
+      "pool_reflection": "Shows her future self briefly",
+      "background_spirit": "Ancient dragon guardian watches entire time"
+    }
+  },
+  
+  "quality_controls": {
+    "must_maintain": [
+      "Strict 2D aesthetic; no 3D elements",
+      "Every frame hand-checked for continuity",
+      "Consistent light direction within shots",
+      "Character volumes remain consistent",
+      "No impossible anatomy even in smears"
+    ],
+    "banned_elements": [
+      "CGI integration",
+      "Motion capture reference",
+      "Automated in-betweening",
+      "Digital particle systems",
+      "Post-production effects beyond color"
+    ],
+    "review_checkpoints": [
+      "Layout approval at rough animation",
+      "Clean-up check at line art",
+      "Color check at paint",
+      "Final at composite"
+    ]
+  },
+  
+  "director_notes": {
+    "vision": "This isn't just animation; it's moving poetry. Every frame should feel like stepping into a dream you don't want to wake from. The grove isn't just a location—it's a character, alive and breathing with ancient wisdom.",
+    "performance": "Eira shouldn't just walk through the grove; she should dance with it. Every gesture is a conversation with the living light. Her transformation isn't just external—we should see her soul awakening.",
+    "technical": "Push the boundaries of 2D animation. If Miyazaki and Makoto Shinkai had a child raised by Yutaka Nakamura, this would be their graduation project. No shortcuts. Every sparkle hand-drawn.",
+    "emotional_core": "This is about connection—to nature, to magic, to purpose. The audience should feel what Eira feels: that moment when you realize you're part of something infinitely larger and more beautiful than yourself.",
+    "final_thought": "Make them cry. Make them believe in magic again."
+  },
+  
+  "deliverables": {
+    "files": [
+      "15s_final_4K_master.mov (ProRes 4444)",
+      "15s_final_HD_preview.mp4 (H.265)",
+      "DPX_sequence_10bit.zip",
+      "Audio_stems_7.1.4.wav",
+      "Music_only_stereo.wav"
+    ],
+    "documentation": [
+      "Director_commentary_track.mp3",
+      "Making_of_artbook.pdf",
+      "Character_model_sheets.psd",
+      "Background_paintings.psd",
+      "Animation_timing_charts.pdf"
+    ],
+    "extras": [
+      "60fps_interpolated_version.mov",
+      "VR_360_experience.mp4",
+      "Individual_shot_breakdowns.zip",
+      "Rough_animation_pencil_tests.mov"
+    ]
+  },
+  
+  "rendering_pipeline": {
+    "software_stack": {
+      "layout": "Storyboard Pro",
+      "rough_animation": "TVPaint",
+      "cleanup": "Toon Boom Harmony Premium",
+      "paint": "Photoshop + TVPaint",
+      "compositing": "After Effects with NO plugins",
+      "color_grading": "DaVinci Resolve"
+    },
+    "export_settings": {
+      "working_format": "EXR 32-bit float linear",
+      "preview_format": "ProRes 422 Proxy",
+      "final_format": "ProRes 4444 XQ 12-bit",
+      "archive_format": "DPX 10-bit + Original project files"
+    }
+  },
+  
+  "reference_and_inspiration": {
+    "films": [
+      "Princess Mononoke - Forest spirit scenes",
+      "Your Name - Twilight sequences",
+      "Spirited Away - Spirit world introduction",
+      "Children of the Sea - Cosmic sequences",
+      "Violet Evergarden - Emotional peaks"
+    ],
+    "art": [
+      "James Gurney - Light and Color",
+      "John Howe - Fantasy environments",
+      "Yoshitaka Amano - Ethereal figures",
+      "Roger Dean - Organic architecture"
+    ],
+    "music": [
+      "Ólafur Arnalds - Ambient textures",
+      "Max Richter - Emotional strings",
+      "Hiroyuki Sawano - Epic moments",
+      "Austin Wintory - Environmental storytelling"
+    ],
+    "real_world": [
+      "Waitomo Glowworm Caves",
+      "Pandora bioluminescent forest",
+      "Aurora Borealis",
+      "Deep sea bioluminescence"
+    ]
+  },
+  
+  "backup_approaches": {
+    "if_over_budget": "Reduce particle counts but maintain key moments",
+    "if_time_crunch": "Animate on twos for non-sakuga sections",
+    "if_technical_limits": "Composite in layers rather than full integration",
+    "never_compromise": "Character animation quality and emotional beats"
+  },
+  
+  "success_metrics": {
+    "critical": [
+      "Audience emotional response (tears/gasps)",
+      "Frame pause appreciation (every frame a painting)",
+      "Rewatch value (notice new details each time)",
+      "Social sharing (organic viral potential)"
+    ],
+    "technical": [
+      "No animation errors in final",
+      "Consistent quality throughout",
+      "Color accuracy on all displays",
+      "Audio clarity at all volumes"
+    ],
+    "artistic": [
+      "Festival selection potential",
+      "Industry recognition",
+      "Inspiration for other artists",
+      "Timeless rather than trendy"
+    ]
+  },
+  
+  "mantra": "Every frame is someone's wallpaper. Every moment is someone's favorite. Every detail matters. This 15 seconds will live forever."
+}
+
+{
+  "project_metadata": {
+    "title": "Project Chrono-Trigger — Echoes of Light",
+    "version": "v2.0_hakoniwa_dynamic_burst",
+    "duration": "15_seconds_exact",
+    "quality_target": "Festival_Submission_Grade",
+    "director_vision": "A kinetic 15-second whirlwind blending ancient mystery and sci-fi urgency, told through high-speed, fluid action and an extreme dynamic range of light."
+  },
+  
+  "role": "Visionary animation auteur orchestrating a transcendent hand-drawn 2D cel anime opus, channeling WIT Studio's explosive dynamics and CoMix Wave Films' (Makoto Shinkai) luminous, painterly environments. This director commands frame-perfect, rapid-fire editing and treats light itself as a primary character.",
+  
+  "studio_style": {
+    "primary": "WIT Studio (Dynamic action, weighty impact, fast-paced cuts, sakuga-level character animation)",
+    "secondary": "CoMix Wave Films (Photographic composition, hyper-detailed backgrounds, poetic use of light, lens flares, and atmospheric particles)",
+    "animators": ["Yutaka Nakamura (for impact frames)", "Norio Matsumoto (for fluid movement)"]
+  },
+  "art_direction": {
+    "visual_philosophy": "Extreme contrast. Crisp, sharp characters against painterly, light-saturated backgrounds. Motion clarity is paramount.",
+    "linework": "Sharp, angular, highly variable (0.5mm - 3.0mm).",
+    "shading": "High-contrast 2-tone cel shading. Aggressive painted rim lighting from both sun and tech sources.",
+    "effects": "All hand-drawn. Critical: Volumetric light shafts (godrays), anamorphic lens flares, glowing particles, light-bloom/halation on all energy sources."
+  },
+  "cinematography": {
+    "philosophy": "The camera is a participant. It never stops moving. This is 'information density' in practice.",
+    "shot_rhythm": {
+      "baseline_duration": "0.6–1.0 seconds",
+      "impact_shots": "0.2–0.5 seconds",
+      "total_shots": "22"
+    },
+    "camera_movement": "Aggressive. Whip pans, snap zooms, rapid dolly-in/out, and high-speed tracking shots. 5% handheld drift on all 'static' shots.",
+    "transition_philosophy": "Primarily hard cuts on action. Use match-cuts and light-bloom-wipes to blend scenes."
+  },
+  "lighting_design": {
+    "philosophy": "Light is the main character. Extreme dynamic range is mandatory. Juxtapose the harsh, painterly light of the sun (Shinkai-style) with the sharp, ethereal glow of sci-fi technology."
+  },
+  "shot_list": [
+    {
+      "id": 1, "duration": "0.0–0.8s",
+      "shot_size": "ECU",
+      "camera": "Low angle, slow push-in (5%)",
+      "action": "A black-gloved hand. Fingers fluidly extend to touch a glowing blue circular device embedded in ancient, sun-lit stone. Fingers make contact at 0.5s.",
+      "lighting": "Bright sun from above (harsh shadow); device casts blue upward key light."
+    },
+    {
+      "id": 2, "duration": "0.8–1.0s",
+      "shot_size": "IMPACT INSERT",
+      "camera": "Top-down, static with 10-frame screen shake",
+      "action": "Device flashes, exploding with blue light particles (sakuga, animated on ones).",
+      "transition_out": "Light bloom wipe."
+    },
+    {
+      "id": 3, "duration": "1.0–1.8s",
+      "shot_size": "WIDE",
+      "camera": "Static, low angle",
+      "action": "Desert expanse. A female 'Seeker' (white top, dark hair) stands back to camera. Her hair and white cloth billow in the wind. She looks up sharply at 1.5s.",
+      "lighting": "Poetic golden hour, strong rim light."
+    },
+    {
+      "id": 4, "duration": "1.8–2.3s",
+      "shot_size": "ECU",
+      "camera": "Crash zoom in",
+      "action": "Seeker's eye, wide. Reflected in the iris is the glowing blue light. Pupil contracts.",
+      "purpose": "Connection established."
+    },
+    {
+      "id": 5, "duration": "2.3–3.5s",
+      "shot_size": "MEDIUM TRACKING",
+      "camera": "Rapid dolly-out, keeping subject centered",
+      "action": "Sci-fi corridor. A male 'Runner' (dark gear) sprints toward the camera. Full sakuga run cycle, debris kicks up from his feet.",
+      "lighting": "Flashing red alert lights tint the scene."
+    },
+    {
+      "id": 6, "duration": "3.5–3.9s",
+      "shot_size": "WIDE",
+      "camera": "High-angle crane shot, looking down",
+      "action": "Sun-drenched ruins. The Seeker now stands over the activated device.",
+      "environment": "Godrays (hand-painted, volumetric) stream through the broken ceiling."
+    },
+    {
+      "id": 7, "duration": "3.9–4.4s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Handheld, 5% breathing drift",
+      "action": "Seeker's face, 3/4 profile. Luminous blue light from below. A single 'memory spore' (particle) drifts past her eye.",
+      "lighting": "Device is now key light."
+    },
+    {
+      "id": 8, "duration": "4.4–5.5s",
+      "shot_size": "WIDE",
+      "camera": "Slow, epic 10% dolly-in",
+      "action": "Desert expanse. The Seeker raises the glowing blue 'core' of the device. A massive pulse of blue energy billows outward, kicking up dust.",
+      "lighting": "Object becomes primary key light, overexposing the scene."
+    },
+    {
+      "id": 9, "duration": "5.5–6.0s",
+      "shot_size": "INSERT",
+      "camera": "Low angle, tracking",
+      "action": "Intercut: The Runner's feet, skidding to a sharp stop on the metallic corridor floor. Sparks fly.",
+      "transition_out": "Hard cut."
+    },
+    {
+      "id": 10, "duration": "6.0–6.8s",
+      "shot_size": "OVER SHOULDER",
+      "camera": "Static",
+      "action": "The Runner looks back. A heavy red energy barrier slams down, blocking the path.",
+      "audio": "Bass drop."
+    },
+    {
+      "id": 11, "duration": "6.8–7.2s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Seeker's hand (in ruins), clenching the blue device core. Her knuckles are white.",
+      "purpose": "Resolve."
+    },
+    {
+      "id": 12, "duration": "7.2–7.8s",
+      "shot_size": "WIDE",
+      "camera": "Static",
+      "action": "Ruins. The godrays intensify, swirling around the Seeker.",
+      "environment": "Dust motes and particles now move with purpose."
+    },
+    {
+      "id": 13, "duration": "7.8–8.5s",
+      "shot_size": "MEDIUM",
+      "camera": "Tracking with subject",
+      "action": "The Seeker (in ruins) plants her foot and starts to run. Full acceleration in 3 frames.",
+      "animation": "Animated on ones. Hair and cloth lag."
+    },
+    {
+      "id": 14, "duration": "8.5–9.0s",
+      "shot_size": "INSERT",
+      "camera": "Whip pan",
+      "action": "WHIP PAN starting from the Seeker's running feet...",
+      "transition_out": "Match cut."
+    },
+    {
+      "id": 15, "duration": "9.0–9.8s",
+      "shot_size": "CLOSE-UP",
+      "camera": "...ends on the Runner's face (in corridor). He grits his teeth, determined.",
+      "action": "He turns and breaks into a sprint again, toward a new path."
+    },
+    {
+      "id": 16, "duration": "9.8–10.5s",
+      "shot_size": "WIDE",
+      "camera": "Low angle, tracking sideways",
+      "action": "Sakuga moment. The Runner leaps across a 20-foot gap between platforms. His form is perfect.",
+      "vfx": "Hand-drawn smear frames and speed lines."
+    },
+    {
+      "id": 17, "duration": "10.5–11.0s",
+      "shot_size": "INSERT",
+      "camera": "Static, impact shake",
+      "action": "The Runner's gloved hand slams onto an activation panel. The panel flashes from red to blue.",
+      "audio": "Confirmation chime + slam."
+    },
+    {
+      "id": 18, "duration": "11.0–12.0s",
+      "shot_size": "EPIC WIDE",
+      "camera": "Static",
+      "action": "Desert. The Seeker holds the core aloft. The sky cracks with blue energy, like a branching lightning bolt.",
+      "lighting": "The sky is now the primary light source."
+    },
+    {
+      "id": 19, "duration": "12.0–12.5s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Seeker's eye. Her iris is no longer human, but a solid, glowing blue fractal.",
+      "purpose": "Transformation."
+    },
+    {
+      "id": 20, "duration": "12.5–13.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Runner's eye. A blue fractal light reflects in his pupil, overcoming the red alert glow.",
+      "purpose": "Connection."
+    },
+    {
+      "id": 21, "duration": "13.0–13.5s",
+      "shot_size": "INSERT",
+      "camera": "Top-down, graphic",
+      "action": "Two halves of a glowing symbol/map (one blue, one red) slam together, forming a perfect circle.",
+      "vfx": "Overexposed flash on impact."
+    },
+    {
+      "id": 22, "duration": "13.5–15.0s",
+      "shot_size": "EXTREME WIDE SHOT (EWS)",
+      "camera": "Massive, slow pullback (drone shot)",
+      "action": "Desert. A colossal pillar of pure blue light shoots from the Seeker into the sky, piercing the clouds and visible from orbit.",
+      "lighting": "Scene is almost entirely white from overexposure, with painterly details visible.",
+      "hold": "Hold on this final frame."
+    }
+  ]
+}
+{
+  "project_metadata": {
+    "title": "Project Aether-Wing — Skybreaker",
+    "version": "v2.0_hakoniwa_dynamic_burst_03",
+    "duration": "15_seconds_exact",
+    "quality_target": "Festival_Submission_Grade",
+    "director_vision": "A breathtaking 15-second aerial duel. We follow an 'ethereal' pilot and her sleek mecha, blending graceful flight with the brutal physics of a high-G dogfight above the clouds."
+  },
+  
+  "role": "Visionary animation auteur orchestrating a transcendent hand-drawn 2D cel anime opus, channeling WIT Studio's fluid aerial dynamics and CoMix Wave Films' (Makoto Shinkai) sublime, light-filled cloudscapes. This director commands frame-perfect, rapid-fire editing and treats the sky itself as a canvas for light and motion.",
+  
+  "studio_style": {
+    "primary": "WIT Studio (Dynamic action, weighty impact, fast-paced cuts, sakuga-level mecha animation)",
+    "secondary": "CoMix Wave Films (Photographic composition, hyper-detailed backgrounds, poetic light, sun-drenched clouds, lens flares)",
+    "animators": ["Yutaka Nakamura (for impact/explosion frames)", "Norio Matsumoto (for fluid character/mecha movement)"]
+  },
+  "art_direction": {
+    "visual_philosophy": "Extreme contrast. Sharp, sleek mecha against soft, painterly, light-saturated cloud-layers. Motion clarity is paramount.",
+    "linework": "Sharp, clean, highly variable (0.5mm - 3.0mm).",
+    "shading": "High-contrast 2-tone cel shading. Aggressive painted rim lighting from the sun, engine flares, and HUDs.",
+    "effects": "All hand-drawn. Critical: Volumetric light shafts (godrays through clouds), anamorphic lens flares (from sun/engines), glowing particles (contrails, energy), light-bloom on all energy sources, detailed cloud displacement."
+  },
+  "cinematography": {
+    "philosophy": "The camera is an agile chase drone. It never stops moving. This is 'information density' in practice.",
+    "shot_rhythm": {
+      "baseline_duration": "0.6–1.0 seconds",
+      "impact_shots": "0.2–0.5 seconds",
+      "total_shots": "23"
+    },
+    "camera_movement": "Aggressive. Whip pans, snap zooms, rapid dolly-in/out, and high-speed tracking shots. 5% handheld drift on all 'static' cockpit shots.",
+    "transition_philosophy": "Primarily hard cuts on action. Use match-cuts (e.g., pilot's eye to sensor) and cloud-wipes to blend scenes."
+  },
+  "lighting_design": {
+    "philosophy": "Light is the main character, refracted by clouds. Extreme dynamic range is mandatory. Juxtapose the blinding, pure light of the upper atmosphere with the deep shadows of the clouds below.",
+    "color_palette": "Bright sky blue (#87CEEB), dazzling white (#FFFFFF), deep shadow-blue (#2C3E50), and pops of warning red (#FF073A) and engine-flare cyan (#00FFFF)."
+  },
+  "shot_list": [
+    {
+      "id": 1, "duration": "0.0–0.7s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "A pilot's eye (ethereal, pale lilac color) snaps open. A complex, glowing cyan HUD is reflected in her pupil.",
+      "lighting": "Key light from the HUD."
+    },
+    {
+      "id": 2, "duration": "0.7–1.0s",
+      "shot_size": "IMPACT INSERT",
+      "camera": "Static, 5-frame shake",
+      "action": "A throttle stick is slammed forward by a gloved hand. The "ACTIVATE" button on the stick flashes.",
+      "transition_out": "Light bloom wipe."
+    },
+    {
+      "id": 3, "duration": "1.0–1.8s",
+      "shot_size": "EPIC WIDE",
+      "camera": "Static, low angle",
+      "action": "A sleek, white-and-cyan mecha bursts vertically from a sea of painterly clouds, ascending toward the sun.",
+      "vfx": "Sakuga-level cloud displacement and particle trails."
+    },
+    {
+      "id": 4, "duration": "1.8–2.3s",
+      "shot_size": "CLOSE-UP (COCKPIT)",
+      "camera": "Handheld, vibrating",
+      "action": "The Pilot (ethereal, long white hair) grits her teeth against the G-force. Sweat beads on her brow. Light from the sun overexposes the cockpit.",
+      "lighting": "Blinding key light from sun."
+    },
+    {
+      "id": 5, "duration": "2.3–3.0s",
+      "shot_size": "WIDE",
+      "camera": "Rapid dolly-out, tracking",
+      "action": "The mecha levels off, flying at incredible speed just above the cloud-tops, leaving a massive wake in the vapor.",
+      "lighting": "Shinkai-style sun/cloud lighting."
+    },
+    {
+      "id": 6, "duration": "3.0–3.4s",
+      "shot_size": "ECU",
+      "camera": "Crash zoom",
+      "action": "The pilot's HUD. A red targeting reticle appears and locks onto an 'UNKNOWN' signature.",
+      "vfx": "Hand-drawn HUD elements."
+    },
+    {
+      "id": 7, "duration": "3.4–4.1s",
+      "shot_size": "WIDE",
+      "camera": "High-angle, looking down",
+      "action": "An enemy mecha (dark, angular, red) bursts up through the clouds, 500m in front of the pilot.",
+      "audio": "Warning Klaxon."
+    },
+    {
+      "id": 8, "duration": "4.1–4.8s",
+      "shot_size": "MEDIUM (COCKPIT)",
+      "camera": "Whip pan right",
+      "action": "The pilot reacts, yanking the control stick hard right. Her white hair (animated on ones) flows with the motion.",
+      "vfx": "Smear frames on her arm."
+    },
+    {
+      "id": 9, "duration": "4.8–5.6s",
+      "shot_size": "WIDE TRACKING",
+      "camera": "Low angle, tracking",
+      "action": "SAKUGA. The white mecha barrel-rolls right. Red lasers from the enemy streak past, narrowly missing. (Yutaka Nakamura style).",
+      "vfx": "Anamorphic lens flare from lasers."
+    },
+    {
+      "id": 10, "duration": "5.6–6.0s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "Pilot's fingers fly across a holographic keypad, diverting power. The keypad glows cyan.",
+      "transition_out": "Hard cut."
+    },
+    {
+      "id": 11, "duration": "6.0–6.5s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Close on the mecha's main thruster. It glows from orange to intense blue. Lens flares.",
+      "purpose": "Full power."
+    },
+    {
+      "id": 12, "duration": "6.5–7.2s",
+      "shot_size": "WIDE",
+      "camera": "Dutch angle (15 degrees), static",
+      "action": "The white mecha performs an impossible 180-degree turn (a Pugachev's Cobra), now facing the enemy.",
+      "vfx": "Massive contrail and air distortion."
+    },
+    {
+      "id": 13, "duration": "7.2–7.7s",
+      "shot_size": "CLOSE-UP (COCKPIT)",
+      "camera": "Static",
+      "action": "Pilot's face. Calm. She whispers one word. A single lilac-colored tear floats weightlessly in the cockpit.",
+      "purpose": "Resolve."
+    },
+    {
+      "id": 14, "duration": "7.7–8.2s",
+      "shot_size": "INSERT",
+      "camera": "Snap zoom",
+      "action": "A weapon pod on the mecha's shoulder opens, revealing a cluster of missiles.",
+      "transition_out": "Match cut."
+    },
+    {
+      "id": 15, "duration": "8.2–8.7s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Enemy pilot's helmet. We see the reflection of the missile launch in his red visor.",
+      "purpose": "He sees it."
+    },
+    {
+      "id": 16, "duration": "8.7–9.8s",
+      "shot_size": "WIDE TRACKING",
+      "camera": "Tracking with missiles",
+      "action": "SAKUGA. A swarm of 12 missiles launches, leaving individual smoke trails, weaving through the clouds toward the enemy mecha.",
+      "animation": "Animated on ones."
+    },
+    {
+      "id": 17, "duration": "9.8–10.4s",
+      "shot_size": "WIDE",
+      "camera": "Static, 30-frame shake",
+      "action": "The enemy mecha is hit. A massive, painterly explosion (Yutaka Nakamura style) fills the screen.",
+      "lighting": "Explosion becomes the key light, tinting clouds orange."
+    },
+    {
+      "id": 18, "duration": "10.4–11.0s",
+      "shot_size": "CLOSE-UP (COCKPIT)",
+      "camera": "Tracking, attached to mecha",
+      "action": "The white mecha flies through the smoke and debris of the explosion. Soot streaks across the canopy.",
+      "lighting": "Flickering orange light from the explosion."
+    },
+    {
+      "id": 19, "duration": "11.0–11.6s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "The pilot's eye. The reflection of the fire is replaced by the calm, blue sky as she clears the smoke.",
+      "purpose": "Calm after the storm."
+    },
+    {
+      "id": 20, "duration": "11.6–12.4s",
+      "shot_size": "WIDE",
+      "camera": "Static, high angle",
+      "action": "The mecha breaks through the cloud layer again, ascending into the pure, untouched upper atmosphere.",
+      "lighting": "Blinding, clean, divine light. Godrays everywhere."
+    },
+    {
+Other S-1 filers include:
+      "id": 21, "duration": "12.4–13.2s",
+      "shot_size": "MEDIUM (COCKPIT)",
+      "camera": "Static",
+      "action": "The pilot unlatches her helmet. Her long white hair floats freely in zero-G.",
+      "purpose": "Release."
+    },
+    {
+      "id": 22, "duration": "13.2–14.2s",
+      "shot_size": "OVER SHOULDER",
+      "camera": "Static",
+      "action": "From behind the pilot, we see her looking out the canopy. The planet's curvature is visible.",
+      "lighting": "Poetic, peaceful."
+    },
+    {
+      "id": 23, "duration": "14.2–15.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "The floating lilac-colored tear. The reflection of the entire planet is perfectly captured in its surface.",
+      "hold": "Hold on this final frame."
+    }
+  ]
+}
+{
+  "project_metadata": {
+    "title": "Project Starlight — 'ECHO' Performance",
+    "version": "v2.0_hakoniwa_dynamic_burst_04",
+    "duration": "15_seconds_exact",
+    "quality_target": "Festival_Submission_Grade",
+    "director_vision": "A 15-second, heart-stopping climax of a futuristic idol performance. We capture the peak of a high-energy dance break and the final, transcendent vocal note, told through a symphony of light, motion, and emotion."
+  },
+  
+  "role": "Visionary animation auteur orchestrating a transcendent hand-drawn 2D cel anime opus, channeling Kyoto Animation's obsessive character acting and fluid dance, and CoMix Wave Films' (Makoto Shinkai) poetic, light-saturated environments. This director commands frame-perfect, music-driven editing.",
+  
+  "studio_style": {
+    "primary": "Kyoto Animation (Obsessive character acting, fluid dance choreography, micro-expressions, hair-strand detail)",
+    "secondary": "CoMix Wave Films (Photographic composition, hyper-detailed backgrounds, poetic light, lens flares, and atmospheric particles)",
+    "animators": ["Norio Matsumoto (for fluid, weighty dance)", "Yutaka Nakamura (for impact frames on beat-drops)"]
+  },
+  "art_direction": {
+    "visual_philosophy": "Extreme contrast. A sharply defined, fluidly animated character against a painterly, explosive background of light and holographic effects. Motion clarity is paramount.",
+    "linework": "Sharp, elegant, highly variable (0.3mm - 2.5mm).",
+    "shading": "High-contrast 2-tone cel shading. Aggressive, multi-colored painted rim lighting from spotlights, floor LEDs, and holographic projections.",
+    "effects": "All hand-drawn. Critical: Volumetric spotlights (godrays), anamorphic lens flares, glowing holographic particles (sakura petals, data bits), light-bloom on all energy sources, detailed sweat/particle physics."
+  },
+  "cinematography": {
+    "philosophy": "The camera is a participant, dancing with the idol. This is 'information density' in practice, synced to a musical beat.",
+    "shot_rhythm": {
+      "baseline_duration": "0.5–1.0 seconds",
+      "impact_shots": "0.2–0.4 seconds (on the beat)",
+      "total_shots": "24"
+    },
+    "camera_movement": "Aggressive and lyrical. Whip pans, snap zooms, rapid dolly-in/out, and high-speed orbital shots. 5% handheld drift on all 'static' close-ups.",
+    "transition_philosophy": "Primarily hard cuts on the musical beat. Use match-cuts (e.g., hand gesture to holographic bloom) and light-bloom-wipes."
+  },
+  "lighting_design": {
+    "philosophy": "Light is the choreography. Extreme dynamic range is mandatory. Juxtapose the dark arena with the blinding, colorful light of the stage.",
+    "color_palette": "Deep indigo (#1A1A2E), electric magenta (#FF00FF), vibrant cyan (#00FFFF), and pops of starlight-gold (#FFD700)."
+  },
+  "shot_list": [
+    {
+      "id": 1, "duration": "0.0–0.5s",
+      "shot_size": "WIDE",
+      "camera": "Static",
+      "action": "Massive arena. Stage is dark. A single cyan spotlight hits center stage, revealing the Idol in a crouched pose.",
+      "lighting": "Single, hard cyan spotlight."
+    },
+    {
+      "id": 2, "duration": "0.5–0.7s",
+      "shot_size": "IMPACT INSERT",
+      "camera": "Static, 3-frame shake",
+      "action": "The Idol's high-tech boot stomps the stage. (BEAT DROP). The floor erupts in a circle of cyan light.",
+      "transition_out": "Light bloom wipe."
+    },
+    {
+      "id": 3, "duration": "0.7–1.5s",
+      "shot_size": "MEDIUM",
+      "camera": "Rapid dolly-in",
+      "action": "Idol explodes upward into her first dance pose (arms wide). Her hair (long, pink) whips around. SAKUGA. (Animated on ones).",
+      "vfx": "Holographic particles swirl around her."
+    },
+    {
+      "id": 4, "duration": "1.5–1.9s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Whip pan right",
+      "action": "Idol's face. She's mid-song, intense expression, sweat visible. Eyes sharp.",
+      "purpose": "Focus."
+    },
+    {
+      "id": 5, "duration": "1.9–2.3s",
+      "shot_size": "LOW ANGLE",
+      "camera": "Tracking left",
+      "action": "Idol performs a complex spin. Her skirt and hair flare out. SAKUGA.",
+      "lighting": "Floor LEDs create dramatic under-lighting."
+    },
+    {
+      "id": 6, "duration": "2.3–2.6s",
+      "shot_size": "ECU",
+      "camera": "Snap zoom",
+      "action": "Her hand, forming a precise, elegant gesture. (BEAT).",
+      "vfx": "Cyan light trails follow her fingers."
+    },
+    {
+      "id": 7, "duration": "2.6–3.0s",
+      "shot_size": "ECU",
+      "camera": "Snap zoom",
+      "action": "Her other hand, forming a matching gesture. (BEAT).",
+      "vfx": "Magenta light trails follow her fingers."
+    },
+    {
+      "id": 8, "duration": "3.0–3.8s",
+      "shot_size": "WIDE",
+      "camera": "High-angle crane shot",
+      "action": "The Idol is now flanked by two massive, holographic dragons (one cyan, one magenta) that mirror her dance moves.",
+      "purpose": "Spectacle."
+    },
+    {
+      "id": 9, "duration": "3.8–4.3s",
+      "shot_size": "MEDIUM",
+      "camera": "Handheld, 5% drift",
+      "action": "Idol's dance break. Fast, intricate footwork. (Animated on ones).",
+      "vfx": "Floor particles scatter with each step."
+    },
+    {
+      "id": 10, "duration": "4.3–4.6s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "Close on her feet. A perfect, sharp toe-stop. (BEAT).",
+      "transition_out": "Hard cut."
+    },
+    {
+      "id": 11, "duration": "4.6–5.4s",
+      "shot_size": "OVERHEAD WIDE",
+      "camera": "Spinning (drone shot)",
+      "action": "Idol performs a final spin. The holographic dragons spiral around her, creating a vortex of light.",
+      "lighting": "Overexposed."
+    },
+    {
+      "id": 12, "duration": "5.4–6.0s",
+      "shot_size": "MEDIUM",
+      "camera": "Dutch angle (15 degrees), static",
+      "action": "Idol hits her final dance pose (arms crossed). (BEAT). The holograms shatter into millions of particles.",
+      "vfx": "SAKUGA explosion. (Yutaka Nakamura style)."
+    },
+    {
+      "id": 13, "duration": "6.0–6.5s",
+      "shot_size": "ECU",
+      "camera": "Slow push-in",
+      "action": "Idol's eye. The holographic shatter is reflected in her iris.",
+      "purpose": "Transition to vocal."
+    },
+    {
+      "id": 14, "duration": "6.5–7.5s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Handheld, vibrating",
+      "action": "Idol brings the microphone to her lips. She takes a deep, visible breath. Her expression is full of emotion.",
+      "lighting": "All lights dim except one soft, golden spotlight."
+    },
+    {
+      "id": 15, "duration": "7.5–8.0s",
+      "shot_size": "WIDE (AUDIENCE)",
+      "camera": "Static",
+      "action": "Massive, dark arena. Thousands of glowing light-sticks (cyan and magenta) are raised in silence.",
+      "purpose": "Anticipation."
+    },
+    {
+      "id": 16, "duration": "8.0–9.5s",
+      "shot_size": "ECU",
+      "camera": "Extreme slow push-in (2%)",
+      "action": "Idol's lips as she begins the final, powerful note. (KyoAni-level micro-expression).",
+      "vfx": "A single, golden particle floats from her lips."
+    },
+    {
+      "id": 17, "duration": "9.5–10.5s",
+      "shot_size": "WIDE",
+      "camera": "Static, 30-frame shake",
+      "action": "As she holds the note, a wave of golden energy erupts from her, washing over the stage.",
+      "lighting": "Explosion becomes the key light, tinting everything gold."
+    },
+    {
+      "id": 18, "duration": "10.5–11.5s",
+      "shot_size": "WIDE (AUDIENCE)",
+      "camera": "Tracking forward",
+      "action": "The audience's light-sticks flash in perfect sync, creating a sea of golden light.",
+      "purpose": "Connection."
+    },
+    {
+      "id": 19, "duration": "11.5–12.3s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Static",
+      "action": "Idol's face. Eyes are closed tight. A single, perfect tear (from effort/emotion) rolls down her cheek.",
+      "lighting": "Soft, golden, angelic rim light."
+    },
+    {
+      "id": 20, "duration": "12.3–13.0s",
+      "shot_size": "EPIC WIDE",
+      "camera": "Low angle, static",
+      "action": "The golden energy wave hits its peak. Massive holographic wings (starlight-gold) erupt from the Idol's back.",
+      "vfx": "Hand-drawn lens flares."
+    },
+    {
+      "id": 21, "duration": "13.0–13.5s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "The tear hits the stage floor, creating a golden ripple. (Match cut).",
+      "purpose": "Climax."
+    },
+    {
+      "id": 22, "duration": "13.5–14.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Idol's eye snaps open. It is glowing pure gold.",
+      "transition_out": "Hard cut to black."
+    },
+    {
+      "id": 23, "duration": "14.0–14.5s",
+      "shot_size": "BLACK SCREEN",
+      "camera": "N/A",
+      "action": "Silence. (BEAT)."
+    },
+    {
+      "id": 24, "duration": "14.5–15.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Idol's face. The glow fades. She gives a small, exhausted, genuine smile.",
+      "hold": "Hold on this final frame."
+    }
+  ]
+}
+{
+  "project_metadata": {
+    "title": "Project Sakura-Wind — Chasing the Sun",
+    "version": "v2.0_hakoniwa_dynamic_burst_05",
+    "duration": "15_seconds_exact",
+    "quality_target": "Festival_Submission_Grade",
+    "director_vision": "A 15-second, emotionally-charged sprint through a world bursting with poetic light. We follow a girl running toward a sunset, capturing the desperate beauty of a fleeting moment through a storm of cherry blossoms."
+  },
+  
+  "role": "Visionary animation auteur orchestrating a transcendent hand-drawn 2D cel anime opus, channeling CoMix Wave Films' (Makoto Shinkai) sublime, light-saturated environments and WIT Studio's dynamic, high-energy camera work. This director commands frame-perfect, emotion-driven editing.",
+  
+  "studio_style": {
+    "primary": "CoMix Wave Films (Photographic composition, hyper-detailed backgrounds, poetic light, sun-drenched skies, lens flares, atmospheric particles)",
+    "secondary": "WIT Studio (Dynamic action, fluid sakuga run-cycles, fast-paced cuts, aggressive camera movement)",
+    "animators": ["Norio Matsumoto (for fluid, weighty running)", "Toshiyuki Inoue (for realistic weight and physics)"]
+  },
+  "art_direction": {
+    "visual_philosophy": "Extreme contrast. A sharply defined, fluidly animated character against a painterly, overexposed, light-saturated world. Motion clarity is paramount.",
+    "linework": "Sharp, elegant, highly variable (0.3mm - 2.5mm).",
+    "shading": "High-contrast 2-tone cel shading. Aggressive, warm, painted rim lighting from the setting sun.",
+    "effects": "All hand-drawn. Critical: Volumetric light shafts (godrays through petals), anamorphic lens flares (from sun), glowing sakura petal particles, light-bloom on the sun, detailed wind/grass physics."
+  },
+  "cinematography": {
+    "philosophy": "The camera is a participant, running with her, buffeted by the same wind. This is 'information density' in practice, synced to an emotional beat.",
+    "shot_rhythm": {
+      "baseline_duration": "0.5–1.0 seconds",
+      "impact_shots": "0.2–0.4 seconds",
+      "total_shots": "24"
+    },
+    "camera_movement": "Aggressive and lyrical. Whip pans, snap zooms, rapid dolly-in/out, and high-speed tracking shots. 5% handheld drift on all 'static' close-ups.",
+    "transition_philosophy": "Primarily hard cuts on action (footfalls). Use match-cuts (e.g., sun in sky to reflection in eye) and petal-storm-wipes."
+  },
+  "lighting_design": {
+    "philosophy": "The Sun is the main character. Extreme dynamic range is mandatory. The entire world is overexposed and bursting with golden-hour light.",
+    "color_palette": "Blinding gold (#FFD700), soft sakura pink (#FFB6C1), deep shadow-blue (#2C3E50), and vibrant sky cyan (#87CEEB)."
+  },
+  "shot_list": [
+    {
+      "id": 1, "duration": "0.0–0.5s",
+      "shot_size": "WIDE",
+      "camera": "Static",
+      "action": "Vast, painterly sky (Shinkai-style). The setting sun is a blinding white-gold disc. Clouds are pink and orange.",
+      "lighting": "Overexposed."
+    },
+    {
+      "id": 2, "duration": "0.5–0.7s",
+      "shot_size": "IMPACT INSERT",
+      "camera": "Low angle, static, 3-frame shake",
+      "action": "A girl's foot (in a traditional-looking shoe) lands hard on lush green grass. (BEAT). Grass blades bend and spring back.",
+      "transition_out": "Grass-wipe up."
+    },
+    {
+      "id": 3, "duration": "0.7–1.5s",
+      "shot_size": "MEDIUM TRACKING",
+      "camera": "Tracking sideways with her",
+      "action": "A girl (dark hair, white/blue outfit) in a full, desperate sprint. SAKUGA run cycle. (Animated on ones). Her hair and skirt billow wildly.",
+      "vfx": "Wind lines."
+    },
+    {
+      "id": 4, "duration": "1.5–1.9s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Handheld, matching her run",
+      "action": "Her face, 3/4 profile. Determined, panting, sweat visible. Eyes fixed forward.",
+      "purpose": "Effort."
+    },
+    {
+      "id": 5, "duration": "1.9–2.4s",
+      "shot_size": "LOW ANGLE",
+      "camera": "Tracking forward (in front of her)",
+      "action": "Her feet pounding the grass. (Animated on ones). With each step, she kicks up grass and small petals.",
+      "lighting": "Backlit by the sun."
+    },
+    {
+      "id": 6, "duration": "2.4–2.8s",
+      "shot_size": "ECU",
+      "camera": "Snap zoom",
+      "action": "Her hand, clenched into a fist as she runs. (BEAT).",
+      "purpose": "Determination."
+    },
+    {
+      "id": 7, "duration": "2.8–3.2s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "A branch of a cherry blossom tree, exploding with pink flowers against the blue sky.",
+      "transition_out": "Hard cut."
+    },
+    {
+      "id": 8, "duration": "3.2–4.0s",
+      "shot_size": "WIDE",
+      "camera": "High-angle crane shot",
+      "action": "The girl runs under the massive cherry blossom tree. A gust of wind hits. (BEAT).",
+      "vfx": "The tree explodes in a SAKUGA storm of thousands of hand-drawn petals."
+    },
+    {
+      "id": 9, "duration": "4.0–4.6s",
+      "shot_size": "MEDIUM",
+      "camera": "Handheld, 5% drift",
+      "action": "She runs directly through the pink petal storm. She closes her eyes briefly against the onslaught.",
+      "vfx": "Petals stick to her sweaty face and clothes."
+    },
+    {
+      "id": 10, "duration": "4.6–4.9s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "A single, perfect petal lands on her outstretched hand. (BEAT).",
+      "transition_out": "Hard cut."
+    },
+    {
+      "id": 11, "duration": "4.9–5.7s",
+      "shot_size": "WIDE",
+      "camera": "Rapid dolly-out",
+      "action": "She bursts out of the petal storm, back into the direct, blinding sunlight on a hilltop.",
+      "lighting": "Overexposed. Anamorphic lens flare."
+    },
+    {
+      "id": 12, "duration": "5.7–6.3s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Dutch angle (15 degrees), static",
+      "action": "Her face. She opens her eyes. (BEAT). A small, pained smile.",
+      "purpose": "Relief/Pain."
+    },
+    {
+      "id": 13, "duration": "6.3–6.8s",
+      "shot_size": "ECU",
+      "camera": "Slow push-in",
+      "action": "Her eye. The blinding sun and the distant city are reflected perfectly in her iris.",
+      "purpose": "Her goal."
+    },
+    {
+      "id": 14, "duration": "6.8–7.5s",
+      "shot_size": "EPIC WIDE",
+      "camera": "Static",
+      "action": "The hilltop. We see what she's running towards: a hyper-detailed, painterly city in the distance, bathed in the gold of the setting sun.",
+      "lighting": "Shinkai-level environmental painting."
+    },
+    {
+      "id": 15, "duration": "7.5–7.9s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "A small, worn charm (like a bell) on her wrist, glinting in the sun.",
+      "purpose": "Motive."
+    },
+    {
+      "id": 16, "duration": "7.9–8.8s",
+      "shot_size": "MEDIUM TRACKING",
+      "camera": "Tracking, orbital (circling her)",
+      "action": "She continues her SAKUGA run, but her pace is faltering. She stumbles slightly at 8.5s.",
+      "animation": "Animated on ones. Focus on the realistic physics of a tired run."
+    },
+    {
+      "id": 17, "duration": "8.8–9.4s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Handheld, 10% shake",
+      "action": "Her face. Eyes are squeezed shut. She's pushing through the pain. A single tear flies from her eye.",
+      "vfx": "The tear catches the sunlight as it flies back."
+    },
+    {
+      "id": 18, "duration": "9.4–10.0s",
+      "shot_size": "INSERT",
+      "camera": "Tracking, attached to tear",
+      "action": "The tear drop, flying through the air. The entire landscape is refracted and upside-down in the tear.",
+      "vfx": "Sakuga-level physics animation."
+    },
+    {
+      "id": 19, "duration": "10.0–10.4s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Her foot lands, crushing a small white flower on the grass.",
+      "purpose": "Metaphor."
+    },
+    {
+      "id": 20, "duration": "10.4–11.0s",
+      "shot_size": "FLASHBACK",
+      "camera": "Static, 1.2x overexposed",
+      "action": "A quick (6-frame) flash of another hand (larger) holding hers.",
+      "vfx": "White bloom wipe in/out."
+    },
+    {
+      "id": 21, "duration": "11.0–11.8s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Her eye snaps open. (BEAT). Renewed determination. The reflection of the city is sharp.",
+      "purpose": "Final push."
+    },
+    {
+      "id": 22, "duration": "11.8–13.0s",
+      "shot_size": "LOW ANGLE WIDE",
+      "camera": "Rapid dolly-in",
+      "action": "She finds her final burst of speed. SAKUGA run. She is a blur of motion, running directly into the setting sun.",
+      "vfx": "Smear frames, wind lines, particles."
+    },
+    {
+      "id": 23, "duration": "13.0–14.0s",
+      "shot_size": "EPIC WIDE",
+      "camera": "Static",
+      "action": "The girl is now just a small silhouette on the hill, running against the massive, painterly, overexposed sun and sky.",
+      "lighting": "The sun is 90% of the frame."
+    },
+    {
+      "id": 24, "duration": "14.0–15.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "The single cherry blossom petal from her hand, now flying away, up towards the sun, until it dissolves into the light.",
+      "hold": "Hold on this final frame as it fades to white."
+    }
+  ]
+}
+{
+  "project_metadata": {
+    "title": "Project Starlight — 'ECHO' Performance",
+    "version": "v2.0_hakoniwa_dynamic_burst_04",
+    "duration": "15_seconds_exact",
+    "quality_target": "Festival_Submission_Grade",
+    "director_vision": "A 15-second, heart-stopping climax of a futuristic idol performance. We capture the peak of a high-energy dance break and the final, transcendent vocal note, told through a symphony of light, motion, and emotion."
+  },
+  
+  "role": "Visionary animation auteur orchestrating a transcendent hand-drawn 2D cel anime opus, channeling **Kyoto Animation's** obsessive character acting and fluid dance, and **CoMix Wave Films' (Makoto Shinkai)** poetic, light-saturated environments. This director commands frame-perfect, music-driven editing.",
+  
+  "studio_style": {
+    "primary": "Kyoto Animation (Obsessive character acting, fluid dance choreography, micro-expressions, hair-strand detail)",
+    "secondary": "CoMix Wave Films (Photographic composition, hyper-detailed backgrounds, poetic light, lens flares, and atmospheric particles)",
+    "animators": ["Norio Matsumoto (for fluid, weighty dance)", "Yutaka Nakamura (for impact frames on beat-drops)"]
+  },
+
+  "art_direction": {
+    "visual_philosophy": "Extreme contrast. A sharply defined, fluidly animated character against a painterly, explosive background of light and holographic effects. Motion clarity is paramount.",
+    "linework": "Sharp, elegant, highly variable (0.3mm - 2.5mm).",
+    "shading": "High-contrast 2-tone cel shading. Aggressive, multi-colored painted rim lighting from spotlights, floor LEDs, and holographic projections.",
+    "effects": "All hand-drawn. **Critical:** Volumetric spotlights (godrays), anamorphic lens flares, glowing holographic particles (sakura petals, data bits), light-bloom on all energy sources, detailed sweat/particle physics."
+  },
+
+  "cinematography": {
+    "philosophy": "The camera is a participant, dancing with the idol. This is 'information density' in practice, synced to a musical beat.",
+    "shot_rhythm": {
+      "baseline_duration": "0.5–1.0 seconds",
+      "impact_shots": "0.2–0.4 seconds (on the beat)",
+      "total_shots": "24"
+    },
+    "camera_movement": "Aggressive and lyrical. Whip pans, snap zooms, rapid dolly-in/out, and high-speed orbital shots. 5% handheld drift on all 'static' close-ups.",
+    "transition_philosophy": "Primarily hard cuts on the musical beat. Use match-cuts (e.g., hand gesture to holographic bloom) and light-bloom-wipes."
+  },
+
+  "lighting_design": {
+    "philosophy": "Light is the choreography. Extreme dynamic range is mandatory. Juxtapose the dark arena with the blinding, colorful light of the stage.",
+    "color_palette": "Deep indigo (#1A1A2E), electric magenta (#FF00FF), vibrant cyan (#00FFFF), and pops of starlight-gold (#FFD700)."
+  },
+
+  "shot_list": [
+    {
+      "id": 1, "duration": "0.0–0.5s",
+      "shot_size": "WIDE",
+      "camera": "Static",
+      "action": "Massive arena. Stage is dark. A single cyan spotlight hits center stage, revealing the Idol in a crouched pose.",
+      "lighting": "Single, hard cyan spotlight."
+    },
+    {
+      "id": 2, "duration": "0.5–0.7s",
+      "shot_size": "IMPACT INSERT",
+      "camera": "Static, 3-frame shake",
+      "action": "The Idol's high-tech boot stomps the stage. (BEAT DROP). The floor erupts in a circle of cyan light.",
+      "transition_out": "Light bloom wipe."
+    },
+    {
+      "id": 3, "duration": "0.7–1.5s",
+      "shot_size": "MEDIUM",
+      "camera": "Rapid dolly-in",
+      "action": "Idol explodes upward into her first dance pose (arms wide). Her hair (long, pink) whips around. SAKUGA. (Animated on ones).",
+      "vfx": "Holographic particles swirl around her."
+    },
+    {
+      "id": 4, "duration": "1.5–1.9s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Whip pan right",
+      "action": "Idol's face. She's mid-song, intense expression, sweat visible. Eyes sharp.",
+      "purpose": "Focus."
+    },
+    {
+      "id": 5, "duration": "1.9–2.3s",
+      "shot_size": "LOW ANGLE",
+      "camera": "Tracking left",
+      "action": "Idol performs a complex spin. Her skirt and hair flare out. SAKUGA.",
+      "lighting": "Floor LEDs create dramatic under-lighting."
+    },
+    {
+      "id": 6, "duration": "2.3–2.6s",
+      "shot_size": "ECU",
+      "camera": "Snap zoom",
+      "action": "Her hand, forming a precise, elegant gesture. (BEAT).",
+      "vfx": "Cyan light trails follow her fingers."
+    },
+    {
+      "id": 7, "duration": "2.6–3.0s",
+      "shot_size": "ECU",
+      "camera": "Snap zoom",
+      "action": "Her other hand, forming a matching gesture. (BEAT).",
+      "vfx": "Magenta light trails follow her fingers."
+    },
+    {
+      "id": 8, "duration": "3.0–3.8s",
+      "shot_size": "WIDE",
+      "camera": "High-angle crane shot",
+      "action": "The Idol is now flanked by two massive, holographic dragons (one cyan, one magenta) that mirror her dance moves.",
+      "purpose": "Spectacle."
+    },
+    {
+      "id": 9, "duration": "3.8–4.3s",
+      "shot_size": "MEDIUM",
+      "camera": "Handheld, 5% drift",
+      "action": "Idol's dance break. Fast, intricate footwork. (Animated on ones).",
+      "vfx": "Floor particles scatter with each step."
+    },
+    {
+      "id": 10, "duration": "4.3–4.6s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "Close on her feet. A perfect, sharp toe-stop. (BEAT).",
+      "transition_out": "Hard cut."
+    },
+    {
+      "id": 11, "duration": "4.6–5.4s",
+      "shot_size": "OVERHEAD WIDE",
+      "camera": "Spinning (drone shot)",
+      "action": "Idol performs a final spin. The holographic dragons spiral around her, creating a vortex of light.",
+      "lighting": "Overexposed."
+    },
+    {
+      "id": 12, "duration": "5.4–6.0s",
+      "shot_size": "MEDIUM",
+      "camera": "Dutch angle (15 degrees), static",
+      "action": "Idol hits her final dance pose (arms crossed). (BEAT). The holograms shatter into millions of particles.",
+      "vfx": "SAKUGA explosion. (Yutaka Nakamura style)."
+    },
+    {
+      "id": 13, "duration": "6.0–6.5s",
+      "shot_size": "ECU",
+      "camera": "Slow push-in",
+      "action": "Idol's eye. The holographic shatter is reflected in her iris.",
+      "purpose": "Transition to vocal."
+    },
+    {
+      "id": 14, "duration": "6.5–7.5s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Handheld, vibrating",
+      "action": "Idol brings the microphone to her lips. She takes a deep, visible breath. Her expression is full of emotion.",
+      "lighting": "All lights dim except one soft, golden spotlight."
+    },
+    {
+      "id": 15, "duration": "7.5–8.0s",
+      "shot_size": "WIDE (AUDIENCE)",
+      "camera": "Static",
+      "action": "Massive, dark arena. Thousands of glowing light-sticks (cyan and magenta) are raised in silence.",
+      "purpose": "Anticipation."
+    },
+    {
+      "id": 16, "duration": "8.0–9.5s",
+      "shot_size": "ECU",
+      "camera": "Extreme slow push-in (2%)",
+      "action": "Idol's lips as she begins the final, powerful note. (KyoAni-level micro-expression).",
+      "vfx": "A single, golden particle floats from her lips."
+    },
+    {
+      "id": 17, "duration": "9.5–10.5s",
+      "shot_size": "WIDE",
+      "camera": "Static, 30-frame shake",
+      "action": "As she holds the note, a wave of golden energy erupts from her, washing over the stage.",
+      "lighting": "Explosion becomes the key light, tinting everything gold."
+    },
+    {
+      "id": 18, "duration": "10.5–11.5s",
+      "shot_size": "WIDE (AUDIENCE)",
+      "camera": "Tracking forward",
+      "action": "The audience's light-sticks flash in perfect sync, creating a sea of golden light.",
+      "purpose": "Connection."
+    },
+    {
+      "id": 19, "duration": "11.5–12.3s",
+      "shot_size": "CLOSE-UP",
+      "camera": "Static",
+      "action": "Idol's face. Eyes are closed tight. A single, perfect tear (from effort/emotion) rolls down her cheek.",
+      "lighting": "Soft, golden, angelic rim light."
+    },
+    {
+      "id": 20, "duration": "12.3–13.0s",
+      "shot_size": "EPIC WIDE",
+      "camera": "Low angle, static",
+      "action": "The golden energy wave hits its peak. Massive holographic wings (starlight-gold) erupt from the Idol's back.",
+      "vfx": "Hand-drawn lens flares."
+    },
+    {
+      "id": 21, "duration": "13.0–13.5s",
+      "shot_size": "INSERT",
+      "camera": "Static",
+      "action": "The tear hits the stage floor, creating a golden ripple. (Match cut).",
+      "purpose": "Climax."
+    },
+    {
+      "id": 22, "duration": "13.5–14.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Idol's eye snaps open. It is glowing pure gold.",
+      "transition_out": "Hard cut to black."
+    },
+    {
+      "id": 23, "duration": "14.0–14.5s",
+      "shot_size": "BLACK SCREEN",
+      "camera": "N/A",
+      "action": "Silence. (BEAT)."
+    },
+    {
+      "id": 24, "duration": "14.5–15.0s",
+      "shot_size": "ECU",
+      "camera": "Static",
+      "action": "Idol's face. The glow fades. She gives a small, exhausted, genuine smile.",
+      "hold": "Hold on this final frame."
+    }
+  ]
+}
