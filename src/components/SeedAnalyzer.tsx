@@ -1,13 +1,13 @@
-// components/SeedAnalyzer.tsx
+// src/components/SeedAnalyzer.tsx
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { usePipelineStore } from '../store/store';
-import { SparklesIcon, TrashIcon, ArrowPathIcon, PhotoIcon, ArrowDownTrayIcon, ArrowUpTrayIcon } from './ui/Icons';
-import { AgentStatus } from '../types';
+import { SparklesIcon, TrashIcon, ArrowPathIcon, PhotoIcon, ArrowDownTrayIcon, ArrowUpTrayIcon, LightBulbIcon } from './ui/Icons';
 import { resizeImage } from '../lib/utils';
 import { modules } from '../lib/pipelineConfig';
 import { ModuleAccordion } from './pipeline/ModuleAccordion';
 import { AccordionSection } from './pipeline/AccordionSection';
 import { QualityGateResultDisplay } from './pipeline/QualityGateResultDisplay';
+import { SeedIdeaGenerator } from './pipeline/SeedIdeaGenerator';
 
 
 const SeedAnalyzer: React.FC = () => {
@@ -15,21 +15,23 @@ const SeedAnalyzer: React.FC = () => {
   const {
     seedImage, setSeedImage,
     conceptBrief, setConceptBrief,
-    agentStatuses, isPipelineRunning, error, openModules,
+    isPipelineRunning, error,
     runPipeline, clearAll, importState,
-    imageAnalysis, conceptAnalysis, visionDocument, qualityGateResult,
-    storyArchitecture, emotionalArc, thematicElements, qualityGate2Result,
-    characterDesign, worldDesign, colorScript, visualBible, qualityGate3Result,
+    visionDocument, qualityGateResult,
+    qualityGate2Result,
+    visualBible, qualityGate3Result,
     cinematographyBible, qualityGate4Result,
     audioBible, qualityGate5Result,
     technicalBible, qualityGate6Result,
     masterPrompt, qualityGate7Result,
     finalFormattedPrompt,
     modulesToRunFromCache,
+    imageAnalysis, conceptAnalysis, storyArchitecture, emotionalArc, thematicElements,
   } = store;
   
   const [openAccordion, setOpenAccordion] = useState<string | null>('vision');
   const [useCache, setUseCache] = useState(true);
+  const [showGeneratorModal, setShowGeneratorModal] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const importFileRef = useRef<HTMLInputElement>(null);
@@ -93,9 +95,11 @@ const SeedAnalyzer: React.FC = () => {
   };
 
   const handleExportState = () => {
-    const stateToExport = { ...store };
+    const stateToExport: Partial<typeof store> = { ...store };
     // Convert Set to Array for JSON serialization
     (stateToExport.modulesToRunFromCache as any) = Array.from(stateToExport.modulesToRunFromCache);
+    delete (stateToExport as any).runPipeline;
+    delete (stateToExport as any).clearAll;
     
     const jsonString = JSON.stringify(stateToExport, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
@@ -134,6 +138,13 @@ const SeedAnalyzer: React.FC = () => {
       // Reset file input to allow re-importing the same file
       event.target.value = '';
   };
+  
+  const handleIdeaGenerated = (brief: string) => {
+    setSeedImage(null); // Clear image if a text idea is generated
+    if(fileInputRef.current) fileInputRef.current.value = '';
+    setConceptBrief(brief);
+    setShowGeneratorModal(false);
+  };
 
 
   useEffect(() => {
@@ -144,6 +155,12 @@ const SeedAnalyzer: React.FC = () => {
 
   return (
     <div className="space-y-8">
+      {showGeneratorModal && (
+        <SeedIdeaGenerator
+          onClose={() => setShowGeneratorModal(false)}
+          onIdeaGenerated={handleIdeaGenerated}
+        />
+      )}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <div className="lg:col-span-2 space-y-6">
           <div>
@@ -177,54 +194,66 @@ const SeedAnalyzer: React.FC = () => {
         <div className="lg:col-span-3 space-y-6">
           <div>
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">3. Execute Pipeline</h2>
-            <div className="flex items-center gap-4 mt-2">
-              <button
-                onClick={handleExecution}
-                disabled={isPipelineRunning || (!seedImage && !conceptBrief)}
-                className={`flex-grow flex items-center justify-center gap-3 px-6 py-3 font-semibold text-white rounded-lg shadow-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 ${isRevisionMode ? 'bg-orange-500 hover:bg-orange-600 focus:ring-orange-500' : 'bg-gray-800 dark:bg-indigo-600 hover:bg-gray-900 dark:hover:bg-indigo-500 focus:ring-gray-800 dark:focus:ring-indigo-500'}`}
-              >
-                {isRevisionMode ? <ArrowPathIcon className="w-5 h-5"/> : <SparklesIcon className="w-5 h-5"/>}
-                {isRevisionMode ? `Revise & Rerun (Gate #${failedGateInfo?.gate} Failed)` : 'Run Pipeline'}
-              </button>
-              <div className="flex items-center gap-2">
-                <input type="file" accept=".json" ref={importFileRef} onChange={handleImportState} className="hidden" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                 <button
-                    onClick={() => importFileRef.current?.click()}
+                    onClick={() => setShowGeneratorModal(true)}
                     disabled={isPipelineRunning}
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 border border-gray-200/80 dark:border-gray-700"
-                    aria-label="Import pipeline state"
+                    className="flex items-center justify-center gap-3 px-6 py-3 font-semibold text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800/80 rounded-lg shadow-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    aria-label="Generate an Idea"
                 >
-                    <ArrowUpTrayIcon className="w-5 h-5 text-gray-600 dark:text-gray-300"/>
+                    <LightBulbIcon className="w-5 h-5"/>
+                    Generate Idea
                 </button>
                 <button
-                    onClick={handleExportState}
-                    disabled={isPipelineRunning}
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 border border-gray-200/80 dark:border-gray-700"
-                    aria-label="Export pipeline state"
+                    onClick={handleExecution}
+                    disabled={isPipelineRunning || (!seedImage && !conceptBrief)}
+                    className={`flex items-center justify-center gap-3 px-6 py-3 font-semibold text-white rounded-lg shadow-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 ${isRevisionMode ? 'bg-orange-500 hover:bg-orange-600 focus:ring-orange-500' : 'bg-gray-800 dark:bg-indigo-600 hover:bg-gray-900 dark:hover:bg-indigo-500 focus:ring-gray-800 dark:focus:ring-indigo-500'}`}
                 >
-                    <ArrowDownTrayIcon className="w-5 h-5 text-gray-600 dark:text-gray-300"/>
+                    {isRevisionMode ? <ArrowPathIcon className="w-5 h-5"/> : <SparklesIcon className="w-5 h-5"/>}
+                    {isRevisionMode ? `Revise (Gate #${failedGateInfo?.gate})` : 'Run Pipeline'}
                 </button>
-                <button
-                    onClick={handleClear}
-                    disabled={isPipelineRunning}
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 border border-gray-200/80 dark:border-gray-700"
-                    aria-label="Clear all inputs and results"
-                >
-                    <TrashIcon className="w-5 h-5 text-gray-600 dark:text-gray-300"/>
-                </button>
-              </div>
             </div>
-             <div className="mt-4 flex items-center">
-              <input
-                type="checkbox"
-                id="useCache"
-                checked={useCache}
-                onChange={(e) => setUseCache(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 bg-gray-100 dark:bg-gray-900"
-              />
-              <label htmlFor="useCache" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                Use Local Storage Cache (for this session)
-              </label>
+
+            <div className="mt-4 flex justify-between items-center">
+                <div className="flex items-center">
+                    <input
+                        type="checkbox"
+                        id="useCache"
+                        checked={useCache}
+                        onChange={(e) => setUseCache(e.target.checked)}
+                        className="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-indigo-600 focus:ring-indigo-500 bg-gray-100 dark:bg-gray-900"
+                    />
+                    <label htmlFor="useCache" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                        Use Local Storage Cache
+                    </label>
+                </div>
+                <div className="flex items-center gap-2">
+                    <input type="file" accept=".json" ref={importFileRef} onChange={handleImportState} className="hidden" />
+                    <button
+                        onClick={() => importFileRef.current?.click()}
+                        disabled={isPipelineRunning}
+                        className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 border border-gray-200/80 dark:border-gray-700"
+                        aria-label="Import pipeline state"
+                    >
+                        <ArrowUpTrayIcon className="w-5 h-5 text-gray-600 dark:text-gray-300"/>
+                    </button>
+                    <button
+                        onClick={handleExportState}
+                        disabled={isPipelineRunning || !visionDocument}
+                        className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 border border-gray-200/80 dark:border-gray-700"
+                        aria-label="Export pipeline state"
+                    >
+                        <ArrowDownTrayIcon className="w-5 h-5 text-gray-600 dark:text-gray-300"/>
+                    </button>
+                    <button
+                        onClick={handleClear}
+                        disabled={isPipelineRunning}
+                        className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 border border-gray-200/80 dark:border-gray-700"
+                        aria-label="Clear all inputs and results"
+                    >
+                        <TrashIcon className="w-5 h-5 text-gray-600 dark:text-gray-300"/>
+                    </button>
+                </div>
             </div>
           </div>
           
@@ -234,6 +263,7 @@ const SeedAnalyzer: React.FC = () => {
                 key={module.name}
                 title={module.name}
                 agents={module.agents}
+                description={module.description}
               />
             ))}
           </div>
@@ -241,7 +271,7 @@ const SeedAnalyzer: React.FC = () => {
         </div>
       </div>
 
-      {(visionDocument || error || visualBible || cinematographyBible) && (
+      {(visionDocument || error) && (
         <div className="space-y-6 pt-8 mt-8 border-t border-gray-200/80 dark:border-gray-800">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Pipeline Results</h2>
           {error && <div className="p-4 text-red-800 bg-red-100 dark:bg-red-900/40 dark:text-red-200 border border-red-200 dark:border-red-700/50 rounded-lg">{error}</div>}
@@ -254,18 +284,18 @@ const SeedAnalyzer: React.FC = () => {
             <QualityGateResultDisplay result={qualityGate5Result} gateNumber={5} />
             <QualityGateResultDisplay result={qualityGate6Result} gateNumber={6} />
             <QualityGateResultDisplay result={qualityGate7Result} gateNumber={7} />
-            <AccordionSection title="Final Formatted Prompt (Agent 7.3)" data={finalFormattedPrompt} id="final" />
-            <AccordionSection title="Master Production Prompt (Agent 7.1)" data={masterPrompt} id="master" />
-            <AccordionSection title="Technical Bible (Integrated by Agent 6.4)" data={technicalBible} id="technical" />
-            <AccordionSection title="Audio Bible (Integrated by Agent 5.4)" data={audioBible} id="audio" />
-            <AccordionSection title="Cinematography Bible (Integrated by Agent 4.4)" data={cinematographyBible} id="cinematography" />
-            <AccordionSection title="North Star Vision Document (Agent 1.3)" data={visionDocument} id="vision" />
-            <AccordionSection title="Story Architecture (Agent 2.1)" data={storyArchitecture} id="story" />
-            <AccordionSection title="Emotional Arc Design (Agent 2.2)" data={emotionalArc} id="emotion" />
-            <AccordionSection title="Thematic Elements (Agent 2.3)" data={thematicElements} id="theme" />
-            <AccordionSection title="Visual Bible (Integrated by Agent 3.4)" data={visualBible} id="bible" />
-            <AccordionSection title="Image Analysis (Agent 1.1)" data={imageAnalysis} id="image" />
-            <AccordionSection title="Concept Extraction (Agent 1.2)" data={conceptAnalysis} id="concept" />
+            <AccordionSection title="Final Formatted Prompt (Agent 7.3)" data={finalFormattedPrompt} id="final" isOpen={openAccordion === 'final'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Master Production Prompt (Agent 7.1)" data={masterPrompt} id="master" isOpen={openAccordion === 'master'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Technical Bible (Integrated by Agent 6.4)" data={technicalBible} id="technical" isOpen={openAccordion === 'technical'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Audio Bible (Integrated by Agent 5.4)" data={audioBible} id="audio" isOpen={openAccordion === 'audio'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Cinematography Bible (Integrated by Agent 4.4)" data={cinematographyBible} id="cinematography" isOpen={openAccordion === 'cinematography'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Visual Bible (Integrated by Agent 3.4)" data={visualBible} id="bible" isOpen={openAccordion === 'bible'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="North Star Vision Document (Agent 1.3)" data={visionDocument} id="vision" isOpen={openAccordion === 'vision'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Story Architecture (Agent 2.1)" data={storyArchitecture} id="story" isOpen={openAccordion === 'story'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Emotional Arc Design (Agent 2.2)" data={emotionalArc} id="emotion" isOpen={openAccordion === 'emotion'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Thematic Elements (Agent 2.3)" data={thematicElements} id="theme" isOpen={openAccordion === 'theme'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Image Analysis (Agent 1.1)" data={imageAnalysis} id="image" isOpen={openAccordion === 'image'} setOpenAccordion={setOpenAccordion} />
+            <AccordionSection title="Concept Extraction (Agent 1.2)" data={conceptAnalysis} id="concept" isOpen={openAccordion === 'concept'} setOpenAccordion={setOpenAccordion} />
           </div>
         </div>
       )}

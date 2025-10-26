@@ -1,7 +1,7 @@
-// src/lib/agents/module1/image-analysis-agent.ts
+// lib/agents/module1/image-analysis-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
 import { ImageAnalysisInput, ImageAnalysisOutput, ImageAnalysisInputSchema, ImageAnalysisOutputSchema } from '../../../types/agents';
-import { SEED_ANALYSIS_PROMPT } from './prompts';
+import { SEED_ANALYSIS_PROMPT } from '../../prompts/module1';
 
 export class ImageAnalysisAgent extends BaseAgent<ImageAnalysisInput, ImageAnalysisOutput> {
   protected agentName = 'agent-1.1-image-analysis';

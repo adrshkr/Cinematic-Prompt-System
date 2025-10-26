@@ -1,7 +1,7 @@
-// src/lib/agents/module1/vision-validator-agent.ts
+// lib/agents/module1/vision-validator-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
 import { VisionValidatorInput, VisionValidatorOutput, VisionSynthesizerInputSchema, VisionSynthesizerOutputSchema } from '../../../types/agents';
-import { VISION_SYNTHESIS_PROMPT, REVISE_VISION_PROMPT } from './prompts';
+import { VISION_SYNTHESIS_PROMPT, REVISE_VISION_PROMPT } from '../../prompts/module1';
 
 export class VisionValidatorAgent extends BaseAgent<VisionValidatorInput, VisionValidatorOutput> {
   protected agentName = 'agent-1.3-vision-validator';

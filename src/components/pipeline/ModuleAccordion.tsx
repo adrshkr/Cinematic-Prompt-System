@@ -1,16 +1,18 @@
 // src/components/pipeline/ModuleAccordion.tsx
 import React from 'react';
 import { usePipelineStore } from '../../store/store';
-import { ChevronDownIcon, CircleStackIcon } from '../ui/Icons';
+import { ChevronDownIcon, CircleStackIcon, InformationCircleIcon } from '../ui/Icons';
 import { AgentStatusItem } from './AgentStatusItem';
 import { moduleOutputKeys } from '../../store/store';
+import { Tooltip } from '../ui/Tooltip';
 
 interface ModuleAccordionProps {
   title: string;
   agents: string[];
+  description?: string;
 }
 
-export const ModuleAccordion: React.FC<ModuleAccordionProps> = ({ title, agents }) => {
+export const ModuleAccordion: React.FC<ModuleAccordionProps> = ({ title, agents, description }) => {
   const store = usePipelineStore();
   const { agentStatuses, openModules, setOpenModules, modulesToRunFromCache, toggleModuleCache } = store;
 
@@ -30,6 +32,11 @@ export const ModuleAccordion: React.FC<ModuleAccordionProps> = ({ title, agents 
         <div className="flex items-center gap-3">
           {hasData && <CircleStackIcon className="w-5 h-5 text-indigo-500" />}
           <h3 className="font-semibold text-gray-800 dark:text-gray-200 text-base">{title}</h3>
+          {description && (
+            <Tooltip text={description}>
+              <InformationCircleIcon className="w-5 h-5 text-gray-400 dark:text-gray-500" />
+            </Tooltip>
+          )}
         </div>
         <div className="flex items-center gap-4">
            {hasData && (

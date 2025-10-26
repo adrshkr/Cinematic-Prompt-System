@@ -1,7 +1,7 @@
 // src/services/pipelineService.ts
 import { agentRegistry } from '../lib/agents/registry';
 import { AgentStatus } from '../types';
-import { usePipelineStore, PipelineState, PipelineActions } from '../store/store';
+import { PipelineState, PipelineActions } from '../store/store';
 import { 
   pipelineStages, 
   moduleMap, 
@@ -11,7 +11,7 @@ import {
 } from '../lib/pipelineConfig';
 
 
-type StoreSetter = (partial: Partial<PipelineState & PipelineActions>, replace?: boolean | undefined) => void;
+type StoreSetter = (partial: Partial<PipelineState & PipelineActions> | ((state: PipelineState & PipelineActions) => Partial<PipelineState & PipelineActions>), replace?: boolean | undefined) => void;
 type StoreGetter = () => PipelineState & PipelineActions;
 
 // Generates a cache key based on agent name and a hash of its input.
@@ -27,8 +27,6 @@ function getCacheKey(agentName: AgentName, input: any): string {
 }
 
 const getAgentInput = (agentName: AgentName, agentOutputs: Record<string, any>, initialInputs: any, revisionInfo?: any) => {
-    // This function is a candidate for further refactoring, but for now, its logic remains.
-    // A better long-term solution might involve agents declaring their own input dependencies.
     switch (agentName) {
       case 'imageAnalysis':
         return { imageData: initialInputs.seedImage?.split(',')[1] };
@@ -79,7 +77,7 @@ const getAgentInput = (agentName: AgentName, agentOutputs: Record<string, any>, 
               cinematographyBible: agentOutputs.cinematographyIntegrator, 
               emotionalArc: agentOutputs.emotionalArcDesigner,
               storyArchitecture: agentOutputs.storyArchitect,
-              characterDesign: agentOutputs.characterDesign,
+              characterDesign: agentOutputs.visualIntegrator.visualBible.characterDesign,
           };
       case 'audioIntegrator':
           return { soundDesign: agentOutputs.soundDesign, music: agentOutputs.musicComposer, dialogue: agentOutputs.dialogueDirector, cinematographyBible: agentOutputs.cinematographyIntegrator };
@@ -115,7 +113,9 @@ const getAgentInput = (agentName: AgentName, agentOutputs: Record<string, any>, 
 const setStatus = (set: StoreSetter, agentKey: AgentName, status: AgentStatus) => {
     const agentUIName = agentNameMapping[agentKey];
     if (agentUIName) {
-        set({ agentStatuses: { ...usePipelineStore.getState().agentStatuses, [agentUIName]: status } });
+        set((state) => ({ 
+            agentStatuses: { ...state.agentStatuses, [agentUIName]: status } 
+        }));
     }
 };
 
@@ -141,7 +141,7 @@ export async function executePipeline(
 
   let startStageIndex = 0;
   if (revisionInfo) {
-    // Logic for revision remains the same
+    // This logic can be expanded to restart the pipeline from a specific stage
   }
 
   const pipelineToRun = pipelineStages.slice(startStageIndex);
@@ -168,7 +168,7 @@ export async function executePipeline(
       .map(async (agentName) => {
         try {
           setStatus(set, agentName, 'running');
-          set({ openModules: [...new Set([...get().openModules, moduleMap[agentName]])] });
+          set(state => ({ openModules: [...new Set([...state.openModules, moduleMap[agentName]])] }));
 
           const agent = agentRegistry[agentName];
           const input = getAgentInput(agentName, agentOutputs, initialInputs, revisionInfo);

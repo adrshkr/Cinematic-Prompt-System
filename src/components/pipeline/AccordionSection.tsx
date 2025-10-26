@@ -1,5 +1,5 @@
 // src/components/pipeline/AccordionSection.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { ChevronDownIcon } from '../ui/Icons';
 
 interface AccordionSectionProps {
@@ -15,7 +15,7 @@ export const AccordionSection: React.FC<AccordionSectionProps> = ({ title, data,
   
   return (
     <div className="border border-gray-200/80 dark:border-gray-800 rounded-lg bg-white dark:bg-[#1C1C1C]">
-      <button onClick={() => setOpenAccordion(isOpen ? null : id)} className="w-full flex justify-between items-center p-4 bg-gray-50/70 hover:bg-gray-100/50 dark:bg-gray-800/40 dark:hover:bg-gray-800/60 rounded-t-lg">
+      <button onClick={() => setOpenAccordion(isOpen ? null : id)} className="w-full text-left flex justify-between items-center p-4 bg-gray-50/70 hover:bg-gray-100/50 dark:bg-gray-800/40 dark:hover:bg-gray-800/60 rounded-t-lg">
         <h3 className="font-semibold text-gray-800 dark:text-gray-200">{title}</h3>
         <ChevronDownIcon className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>

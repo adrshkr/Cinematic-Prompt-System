@@ -1,4 +1,4 @@
-// App.tsx
+// src/App.tsx
 import React, { useState } from 'react';
 import { AgentMode } from './types';
 import { AGENT_MODES } from './lib/constants';
@@ -36,7 +36,7 @@ const App: React.FC = () => {
           <p className="mt-3 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">An AI-powered orchestration pipeline for creating festival-grade cinematic prompts.</p>
            <div className="absolute top-0 right-0">
             <button
-              onClick={toggleTheme}
+              onClick={() => toggleTheme()}
               className="p-2 rounded-full bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle dark mode"
             >

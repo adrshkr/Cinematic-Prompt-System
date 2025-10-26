@@ -1,7 +1,7 @@
-// src/lib/agents/module1/concept-extraction-agent.ts
+// lib/agents/module1/concept-extraction-agent.ts
 import { BaseAgent, AgentContext } from '../base-agent';
 import { ConceptExtractionInput, ConceptExtractionOutput, ConceptExtractionInputSchema, ConceptExtractionOutputSchema } from '../../../types/agents';
-import { CONCEPT_EXTRACTION_PROMPT } from './prompts';
+import { CONCEPT_EXTRACTION_PROMPT } from '../../prompts/module1';
 
 export class ConceptExtractionAgent extends BaseAgent<ConceptExtractionInput, ConceptExtractionOutput> {
   protected agentName = 'agent-1.2-concept-extraction';
