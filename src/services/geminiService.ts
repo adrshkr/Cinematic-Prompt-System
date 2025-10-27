@@ -1,8 +1,7 @@
 // src/services/geminiService.ts
-import { GoogleGenAI, GenerateContentResponse, GroundingChunk } from "@google/genai";
+import { GenerateContentResponse, GroundingChunk } from "@google/genai";
 import { z } from 'zod';
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+import { getGoogleGenAIClient } from '../lib/gemini/client';
 
 const SeedIdeaSchema = z.object({
   conceptBrief: z.string().describe("A 1-2 paragraph concept for a 15-second cinematic anime short, inspired by the user's keyword. It should be evocative and set a clear scene and mood."),
@@ -10,6 +9,7 @@ const SeedIdeaSchema = z.object({
 
 export async function webSearch(prompt: string): Promise<{ text: string, sources: GroundingChunk[] }> {
   try {
+    const ai = getGoogleGenAIClient();
     const response: GenerateContentResponse = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: prompt,
@@ -30,6 +30,7 @@ export async function webSearch(prompt: string): Promise<{ text: string, sources
 
 export async function deepDive(prompt: string): Promise<string> {
   try {
+    const ai = getGoogleGenAIClient();
     const response: GenerateContentResponse = await ai.models.generateContent({
       model: "gemini-2.5-pro",
       contents: prompt,
@@ -47,6 +48,7 @@ export async function deepDive(prompt: string): Promise<string> {
 
 export async function generateSeedIdea(keyword: string): Promise<{ brief: string }> {
   try {
+    const ai = getGoogleGenAIClient();
     const conceptPrompt = `
       Based on the user's keyword, generate a creative seed idea for a 15-second cinematic anime short film.
       The keyword is: "${keyword}"

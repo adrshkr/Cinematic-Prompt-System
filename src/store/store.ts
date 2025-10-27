@@ -22,6 +22,8 @@ const initialAgentStatuses: Record<string, AgentStatus> = {
     'Agent 7.1': 'pending', 'Agent 7.2': 'pending', 'Agent 7.3': 'pending',
 };
 
+const createInitialAgentStatuses = (): Record<string, AgentStatus> => ({ ...initialAgentStatuses });
+
 export const moduleOutputKeys: Record<string, keyof PipelineState> = {
     'Module 1: Intake & Analysis': 'qualityGateResult',
     'Module 2: Creative Foundation': 'qualityGate2Result',
@@ -122,17 +124,24 @@ const initialState: PipelineState = {
   finalFormattedPrompt: null,
 };
 
+const cloneInitialState = (): PipelineState => ({
+  ...initialState,
+  agentStatuses: createInitialAgentStatuses(),
+  modulesToRunFromCache: new Set<string>(),
+});
+
 export const usePipelineStore = create<PipelineStore>()(
   devtools(
       (set, get) => ({
-        ...initialState,
+        ...cloneInitialState(),
         setSeedImage: (image) => set({ seedImage: image }),
         setConceptBrief: (brief) => set({ conceptBrief: brief }),
         setError: (error) => set({ error }),
         runPipeline: (initialInputs, options, revisionInfo) => {
+          set({ agentStatuses: createInitialAgentStatuses(), error: null });
           executePipeline(initialInputs, options, set, get, revisionInfo);
         },
-        clearAll: () => set(initialState),
+        clearAll: () => set(() => cloneInitialState()),
         setOpenModules: (updater) => set((state) => ({ openModules: updater(state.openModules) })),
         toggleModuleCache: (moduleName) => set((state) => {
           const newSet = new Set(state.modulesToRunFromCache);
@@ -143,8 +152,8 @@ export const usePipelineStore = create<PipelineStore>()(
           }
           return { modulesToRunFromCache: newSet };
         }),
-        importState: (importedState) => set((state) => {
-          const newState = { ...initialState, ...importedState, agentStatuses: initialAgentStatuses };
+        importState: (importedState) => set(() => {
+          const newState = { ...cloneInitialState(), ...importedState, agentStatuses: createInitialAgentStatuses() } as PipelineState;
           const newModulesToCache = new Set<string>();
           for (const moduleName of allModuleNames) {
               const key = moduleOutputKeys[moduleName];
