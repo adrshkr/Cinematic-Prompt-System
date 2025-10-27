@@ -232,6 +232,32 @@ export const StoryArchitectOutputSchema = z.object({
             }),
         }),
         pacing: z.string(),
+        characterMotivations: z.array(z.object({
+            character: z.string(),
+            coreDesire: z.string(),
+            conflictPoint: z.string(),
+            resolutionBeat: z.string(),
+        })),
+        narrativeInnovations: z.object({
+            novelTwists: z.array(z.object({
+                twistTitle: z.string(),
+                setupBeat: z.string(),
+                payoffBeat: z.string(),
+                thematicSymbolCallback: z.string(),
+            })),
+            inventedBeats: z.array(z.object({
+                beatName: z.string(),
+                act: z.string(),
+                description: z.string(),
+                emotionalTarget: z.string(),
+            })),
+        }),
+        qualityChecklist: z.object({
+            distinctMotivationsConfirmed: z.boolean(),
+            twoPlusNovelTwistsConfirmed: z.boolean(),
+            symbolCallbacksEmbedded: z.boolean(),
+            newBeatsBeyondSource: z.boolean(),
+        }),
     }),
 });
 export type StoryArchitectInput = z.infer<typeof StoryArchitectInputSchema>;
@@ -382,17 +408,45 @@ export const CharacterDesignOutputSchema = z.object({
           description: z.string(),
         })),
       }),
+      motivationLinks: z.array(z.object({
+        storyBeat: z.string(),
+        emotionalArcMoment: z.string(),
+        motivationDetail: z.string(),
+      })),
+      supportingElements: z.object({
+        supportingCast: z.array(z.object({
+          name: z.string(),
+          visualHook: z.string(),
+          screenFunction: z.string(),
+          emotionalArcJustification: z.string(),
+          themeJustification: z.string(),
+        })),
+        backgroundMicroDetails: z.array(z.object({
+          element: z.string(),
+          animationCue: z.string(),
+          emotionalArcJustification: z.string(),
+          themeJustification: z.string(),
+        })),
+      }),
       animationRequirements: z.object({
         expressionRange: z.array(z.string()),
         signatureMovements: z.array(z.string()),
         secondaryAnimation: z.array(z.string()),
       }),
       consistencyRules: z.array(z.string()),
+      qualityChecklist: z.object({
+        supportingCastInvented: z.boolean(),
+        microDetailsInvented: z.boolean(),
+        emotionalThemeAlignmentVerified: z.boolean(),
+        colorPaletteComplianceConfirmed: z.boolean(),
+      }),
     }),
 });
 export const CharacterDesignInputSchema = z.object({
     visionDocument: VisionSynthesizerOutputSchema,
     storyArchitecture: StoryArchitectOutputSchema,
+    emotionalArc: EmotionalArcDesignerOutputSchema,
+    thematicElements: ThemeSymbolismOutputSchema,
     colorScript: ColorScriptOutputSchema,
 });
 export type CharacterDesignInput = z.infer<typeof CharacterDesignInputSchema>;
@@ -402,6 +456,8 @@ export type CharacterDesignOutput = z.infer<typeof CharacterDesignOutputSchema>;
 export const WorldDesignInputSchema = z.object({
     visionDocument: VisionSynthesizerOutputSchema,
     storyArchitecture: StoryArchitectOutputSchema,
+    emotionalArc: EmotionalArcDesignerOutputSchema,
+    thematicElements: ThemeSymbolismOutputSchema,
     colorScript: ColorScriptOutputSchema,
 });
 export const WorldDesignOutputSchema = z.object({
@@ -418,10 +474,32 @@ export const WorldDesignOutputSchema = z.object({
             celestialDetails: z.array(z.object({ element: z.string(), description: z.string(), justification: z.string() })),
             architecturalFlourishes: z.array(z.object({ element: z.string(), description: z.string(), justification: z.string() })),
         }),
+        supportingElements: z.object({
+            backgroundCharacters: z.array(z.object({
+                name: z.string(),
+                silhouetteDesign: z.string(),
+                activityLoop: z.string(),
+                emotionalArcJustification: z.string(),
+                themeJustification: z.string(),
+            })),
+            environmentalMicroDetails: z.array(z.object({
+                detail: z.string(),
+                layerPlacement: z.string(),
+                animationTreatment: z.string(),
+                emotionalArcJustification: z.string(),
+                themeJustification: z.string(),
+            })),
+        }),
         technicalDetails: z.object({
             backgroundArtStyle: z.string(),
             parallaxLayers: z.array(z.string()),
             livingWorldElements: z.array(z.string()),
+        }),
+        qualityChecklist: z.object({
+            backgroundCharactersInvented: z.boolean(),
+            microDetailsInvented: z.boolean(),
+            emotionalThemeJustificationsPresent: z.boolean(),
+            colorPaletteComplianceConfirmed: z.boolean(),
         }),
     }),
 });

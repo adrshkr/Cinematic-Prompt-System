@@ -23,6 +23,12 @@ export class WorldDesignAgent extends BaseAgent<WorldDesignInput, WorldDesignOut
       Story Architecture:
       ${JSON.stringify(input.storyArchitecture, null, 2)}
 
+      Emotional Arc Design:
+      ${JSON.stringify(input.emotionalArc, null, 2)}
+
+      Theme & Symbolism:
+      ${JSON.stringify(input.thematicElements, null, 2)}
+
       Color Script:
       ${JSON.stringify(input.colorScript, null, 2)}
     `;
