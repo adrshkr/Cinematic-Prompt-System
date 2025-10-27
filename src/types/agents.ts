@@ -925,6 +925,36 @@ export const MasterIntegratorOutputSchema = z.object({
         final_shot_list_with_all_specs: z.array(z.any()), // Can be tightened later
         complete_audio_bible: AudioIntegratorOutputSchema.shape.audioBible,
         production_ready_technical_bible: TechnicalIntegratorOutputSchema.shape.technicalBible,
+        integration_provenance: z.object({
+            section_lineage: z.array(
+                z.object({
+                    section_id: z.string(),
+                    source_modules: z.array(z.string()),
+                    preserved_highlights: z.array(
+                        z.object({
+                            module: z.string(),
+                            excerpt: z.string(),
+                        })
+                    ),
+                    integration_notes: z.string(),
+                })
+            ),
+            director_decisions: z.array(
+                z.object({
+                    issue: z.string(),
+                    decision: z.string(),
+                    rationale: z.string(),
+                    impact: z.string(),
+                })
+            ),
+            module_contribution_scores: z.array(
+                z.object({
+                    module: z.string(),
+                    score: z.number(),
+                    justification: z.string(),
+                })
+            ),
+        }),
     }),
 });
 export type MasterIntegratorInput = z.infer<typeof MasterIntegratorInputSchema>;

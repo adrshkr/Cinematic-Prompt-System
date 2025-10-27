@@ -82,6 +82,51 @@ export class MasterIntegratorAgent extends BaseAgent<MasterIntegratorInput, Mast
         })),
         complete_audio_bible: input.audio.audioBible,
         production_ready_technical_bible: input.tech.technicalBible,
+        integration_provenance: {
+            section_lineage: [
+                {
+                    section_id: 'director_vision_statement',
+                    source_modules: ['vision'],
+                    preserved_highlights: [
+                        {
+                            module: 'vision',
+                            excerpt: input.vision.synthesizedVision.unifiedDescription,
+                        },
+                    ],
+                    integration_notes: 'Fallback synthesis mirrors the unified description verbatim for traceability.',
+                },
+                {
+                    section_id: 'unified_story',
+                    source_modules: ['story', 'emotionalArc', 'thematicElements', 'vision'],
+                    preserved_highlights: [
+                        { module: 'story', excerpt: input.story.storyArchitecture.logline },
+                        {
+                            module: 'emotionalArc',
+                            excerpt: input.emotionalArc.emotionalArc.keyEmotionalShift.trigger || 'Refer to emotional arc input.',
+                        },
+                    ],
+                    integration_notes: 'Structure mirrors upstream story, emotional arc, and thematic documents without modification.',
+                },
+            ],
+            director_decisions: [
+                {
+                    issue: 'Manual fallback invoked',
+                    decision: 'Preserved upstream structures without additional weaving.',
+                    rationale: 'Automated synthesis failed validation; fallback retains traceability for human review.',
+                    impact: 'Requires creative pass to add director-level nuance before production.',
+                },
+            ],
+            module_contribution_scores: [
+                { module: 'vision', score: 5, justification: 'Baseline vision retained verbatim in fallback output.' },
+                { module: 'story', score: 5, justification: 'Story beats copied directly; requires refinement.' },
+                { module: 'emotionalArc', score: 5, justification: 'Emotional arc preserved without reinterpretation.' },
+                { module: 'thematicElements', score: 5, justification: 'Themes maintained as provided.' },
+                { module: 'visual', score: 4, justification: 'Visual bible transferred without new integration notes.' },
+                { module: 'cine', score: 4, justification: 'Shot list ported; lacks fresh director notes.' },
+                { module: 'audio', score: 4, justification: 'Audio plan included with minimal synthesis.' },
+                { module: 'tech', score: 4, justification: 'Technical plan embedded unchanged.' },
+            ],
+        },
     };
 
     return { masterPrompt };
@@ -97,6 +142,9 @@ export class MasterIntegratorAgent extends BaseAgent<MasterIntegratorInput, Mast
     if (masterPrompt.final_shot_list_with_all_specs.length > 0) score += 20;
     if (masterPrompt.complete_audio_bible) score += 20;
     if (masterPrompt.production_ready_technical_bible) score += 20;
+    if (masterPrompt.integration_provenance && masterPrompt.integration_provenance.module_contribution_scores.length === 8) {
+      score += 10;
+    }
     return Math.min(score, 100);
   }
 }
