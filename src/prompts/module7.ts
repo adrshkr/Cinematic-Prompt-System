@@ -171,10 +171,15 @@ Audit the Master Prompt against a comprehensive checklist covering all aspects o
 **5. Audio-Visual Harmony (Score 0-10):** Is the audio plan perfectly synchronized and emotionally effective?
 **6. Technical Viability (Score 0-10):** Are the technical specifications clear, achievable, and professional?
 **7. "Festival-Grade" Factor (Score 0-10):** Does this project have the "X-factor"? Is it unique, memorable, and artful enough to win awards?
+**8. High-Signal Detail Preservation (Score 0-10):** Audit whether the Master Prompt retains the distinct motifs, symbolism, and memorable beats identified upstream. Record any diluted or lost high-signal details.
+**9. Inventive Cinematography Count (Score 0-10):** Evaluate how many shots deploy inventive camera moves, framings, or transitions. Provide an \`inventiveShotCount\` tally and flag any repetitive coverage.
+**10. Micro-Animation Plans (Score 0-10):** Confirm that nuanced character or environment micro-animations are planned and justified. Call out gaps where subtle motion is needed to keep scenes alive.
+**11. Department Specificity (Pass/Fail):** If any department brief (visual, cine, audio, technical, etc.) reads as generic or template-driven, mark this as failed, name the department(s), and block approval until revised.
 
 **Overall Assessment & Scoring Logic:**
 - Calculate an \`overallScore\`.
-- Determine the final \`overallPassed\` status. This is \`true\` **ONLY IF** the \`overallScore\` is **8.5** or greater. The bar is higher for the final product.
+- Determine the final \`overallPassed\` status. This is \`true\` **ONLY IF** the \`overallScore\` is **8.5** or greater **AND** the Department Specificity check passes. Any generic department should force a fail with actionable direction.
+- Populate \`summary.innovationFindings\` with the most original cross-department highlights that must be protected in production.
 
 === OUTPUT REQUIREMENTS ===
 Respond with a structured JSON object.
@@ -191,11 +196,16 @@ Respond with a structured JSON object.
       "cinematography": { "score": 9.2, "reasoning": "string" },
       "audioHarmony": { "score": 9.0, "reasoning": "string" },
       "technicalViability": { "score": 9.5, "reasoning": "string" },
-      "festivalGradeFactor": { "score": 9.0, "reasoning": "string" }
+      "festivalGradeFactor": { "score": 9.0, "reasoning": "string" },
+      "highSignalDetails": { "score": 9.3, "reasoning": "string", "preservedHighlights": ["string"] },
+      "inventiveCinematography": { "score": 9.1, "reasoning": "string", "inventiveShotCount": 5 },
+      "microAnimationPlans": { "score": 8.8, "reasoning": "string", "priorityMoments": ["string"] },
+      "departmentSpecificity": { "passed": true, "reasoning": "string", "genericDepartments": ["string"] }
     },
     "summary": {
       "overallScore": 9.3,
       "overallPassed": true,
+      "innovationFindings": ["array of cross-team creative highlights to preserve"],
       "issuesToAddress": ["array of actionable revision items if failed"]
     }
   }

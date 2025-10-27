@@ -166,9 +166,16 @@ Audit the creative foundation against three pillars.
    - Are the symbols creative and supportive of the theme?
    - **Scoring**: 0-6 (Superficial or confusing), 7-8 (Clear and adds value), 9-10 (Adds significant depth and meaning).
 
-**4. Overall Assessment & Scoring Logic:**
+**4. Originality & Invention (Creativity Score 0-10):**
+   - Evaluate novelty: are there fresh ideas, unexpected twists, or inventive symbolic interpretations?
+   - Assess richness of invented elements: do the documents introduce memorable world/character flourishes beyond clichés?
+   - Identify innovation findings: note specific creative breakthroughs, experimental beats, or visual metaphors worth protecting downstream.
+   - **Scoring**: 0-6 (Derivative or thin), 7-8 (Solidly original), 9-10 (Distinctive, award-worthy creativity).
+   - If the creativity score falls below **7**, add at least two actionable revisions to \`summary.issuesToAddress\` focused on elevating originality.
+
+**5. Overall Assessment & Scoring Logic:**
    - Calculate an \`overallScore\` by averaging the numeric scores.
-   - Determine the final \`overallPassed\` status. This is \`true\` ONLY IF the \`overallScore\` is 7.0 or greater AND the pass/fail check is \`true\`.
+   - Determine the final \`overallPassed\` status. This is \`true\` ONLY IF the \`overallScore\` is 7.0 or greater, the pass/fail check is \`true\`, **and** the creativity score is 7.0 or greater.
 
 === OUTPUT REQUIREMENTS ===
 Respond with a structured JSON object matching this exact schema.
@@ -190,12 +197,19 @@ Respond with a structured JSON object matching this exact schema.
       "depth": {
         "score": 9.0,
         "reasoning": "string"
+      },
+      "originality": {
+        "creativityScore": 8.5,
+        "innovationFindings": ["array highlighting novel elements"],
+        "reasoning": "string"
       }
     },
     "summary": {
       "overallScore": 8.5,
       "overallPassed": true,
-      "issuesToAddress": ["array of actionable revision items if failed"]
+      "creativityScore": 8.5,
+      "innovationFindings": ["carry-forward list of standout creative ideas"],
+      "issuesToAddress": ["array of actionable revision items if failed or creativity < 7"]
     }
   }
 }
