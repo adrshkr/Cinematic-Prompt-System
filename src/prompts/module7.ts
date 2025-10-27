@@ -20,14 +20,15 @@ You will receive a JSON object containing the final "Bibles" from all previous m
 - \`qaFeedback\` (optional): If this is a revision cycle, you will receive an array of issues from the final QA auditor that you MUST address.
 
 === TASK DESCRIPTION ===
-1.  **Write the Director's Vision Statement**: Start by synthesizing the core creative idea from all inputs into an inspiring, 3-4 sentence "Director's Vision Statement." This is the soul of the project.
-2.  **Unify the Bibles**: Intelligently merge the key components of each bible into a single, comprehensive structure. Do not simply nest the old objects. Extract and re-integrate the data into the new, logical hierarchy defined in the output schema.
-3.  **Resolve Final Micro-Conflicts**: Identify and resolve any remaining, minor conflicts between the bibles. For example, if the audio bible specifies a sound effect for an action that was slightly re-timed by the Pacing Expert in the technical bible, adjust the sound effect's timecode. You have the authority to make these final executive decisions.
-4.  **Add Director's Polish**: As you integrate, add small notes and flourishes that enhance cohesion. For example, in a shot description, you might add a note like: "Director's Note: The lighting here must perfectly sync with the musical swell from the audio bible to maximize emotional impact."
-5.  **Address QA Feedback (if provided)**: If \`qaFeedback\` is present, your primary goal is to address every single issue raised. Your revised Master Prompt must demonstrably fix the problems.
+1.  **Write the Director's Vision Statement**: Start by synthesizing the core creative idea from all inputs into an inspiring, 3-4 sentence "Director's Vision Statement." Cite which upstream modules shaped each sentence and quote at least one verbatim line that anchors the emotional intent.
+2.  **Unify the Bibles with Traceable Provenance**: Intelligently merge the key components of each bible into a single, comprehensive structure. Do not simply nest the old objects. Extract and re-integrate the data into the new, logical hierarchy defined in the output schema, tagging every synthesized section with the contributing modules and weaving in the original wording of high-value details instead of averaging them away. For example, if the Visual bible mandates "iridescent amber rim light" for a key moment, that exact phrase must appear in the final prompt alongside the modules that demanded it.
+3.  **Document Preserved Highlights & Section Lineage**: For every major section you create, record which modules informed it and store verbatim highlights inside the provenance metadata so future teams can see exactly what survived intact.
+4.  **Flag Director Decisions**: When you encounter omissions, contradictions, or creative conflicts, resolve them and log the call-out as an explicit "director decision" that notes the issue, your ruling, the rationale, and the downstream impact.
+5.  **Score Module Contributions**: Evaluate each upstream module on a 0-10 scale based on how meaningfully it shaped the final master prompt. Generic or underdeveloped material must receive lower scores with clear justification so weak inputs cannot hide.
+6.  **Address QA Feedback (if provided)**: If \`qaFeedback\` is present, your primary goal is to address every single issue raised. Your revised Master Prompt must demonstrably fix the problems, and the resolution should be visible either in the main content or the director decisions log.
 
 === OUTPUT REQUIREMENTS ===
-Respond with a single, structured JSON object representing the **Master Production Prompt**. Your output MUST strictly adhere to this detailed schema.
+Respond with a single, structured JSON object representing the **Master Production Prompt**. Your output MUST strictly adhere to this detailed schema. Every preserved highlight must be a verbatim quote from the source module (wrapped in straight double quotes), and any divergence between sources must be surfaced as a director decision rather than averaged away.
 
 \`\`\`json
 {
@@ -145,6 +146,29 @@ Respond with a single, structured JSON object representing the **Master Producti
         "production_notes": [],
         "warnings": []
       }
+    },
+    "integration_provenance": {
+      "section_lineage": [
+        {
+          "section_id": "string: identifier of the section being documented (e.g., 'unified_story.emotional_arc')",
+          "source_modules": ["string"],
+          "preserved_highlights": [
+            { "module": "string", "excerpt": "string: verbatim quote kept intact" }
+          ],
+          "integration_notes": "string: explain how the preserved highlights were woven together (e.g., 'Wove Story.beat2 \"Lantern flickers twice\" with Visual.palette \"iridescent amber rim light\" to keep tension and glow aligned')"
+        }
+      ],
+      "director_decisions": [
+        {
+          "issue": "string: omission/conflict discovered",
+          "decision": "string: explicit ruling",
+          "rationale": "string: creative/technical justification",
+          "impact": "string: downstream effect"
+        }
+      ],
+      "module_contribution_scores": [
+        { "module": "vision", "score": 0, "justification": "string: why this score was assigned" }
+      ]
     }
   }
 }
