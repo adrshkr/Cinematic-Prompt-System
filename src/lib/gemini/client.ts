@@ -2,7 +2,41 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { z } from 'zod';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+let sharedClient: GoogleGenAI | null = null;
+
+const resolveApiKey = (): string => {
+  const metaEnv = typeof import.meta !== 'undefined'
+    ? (import.meta as unknown as { env?: Record<string, string | undefined> }).env
+    : undefined;
+
+  const keyFromMeta = metaEnv?.VITE_GENAI_API_KEY
+    ?? metaEnv?.VITE_GOOGLE_GENAI_API_KEY
+    ?? metaEnv?.VITE_API_KEY;
+
+  const keyFromProcess = typeof process !== 'undefined'
+    ? process.env?.VITE_GENAI_API_KEY
+      ?? process.env?.VITE_GOOGLE_GENAI_API_KEY
+      ?? process.env?.VITE_API_KEY
+      ?? process.env?.API_KEY
+    : undefined;
+
+  const apiKey = keyFromMeta ?? keyFromProcess;
+
+  if (!apiKey) {
+    throw new Error(
+      'Google GenAI API key is not configured. Set VITE_GENAI_API_KEY (preferred) or API_KEY in your environment before running the agents.'
+    );
+  }
+
+  return apiKey;
+};
+
+export const getGoogleGenAIClient = (): GoogleGenAI => {
+  if (!sharedClient) {
+    sharedClient = new GoogleGenAI({ apiKey: resolveApiKey() });
+  }
+  return sharedClient;
+};
 
 export interface GeminiConfig {
   model: 'gemini-2.5-flash' | 'gemini-2.5-pro';
@@ -63,6 +97,7 @@ export class GeminiClient {
     prompt: string,
     schema: z.ZodSchema<T>
   ): Promise<T> {
+    const ai = getGoogleGenAIClient();
     const apiCall = () => ai.models.generateContent({
       model: this.config.model,
       contents: prompt,
@@ -94,6 +129,7 @@ export class GeminiClient {
   }
 
   async analyzeImageStructured<T>(imageData: string, prompt: string, schema: z.ZodSchema<T>): Promise<T> {
+    const ai = getGoogleGenAIClient();
     const imagePart = {
       inlineData: {
         mimeType: 'image/jpeg',

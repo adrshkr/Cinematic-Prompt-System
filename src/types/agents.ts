@@ -997,6 +997,57 @@ export const MasterIntegratorInputSchema = z.object({
     tech: TechnicalIntegratorOutputSchema,
     qaFeedback: z.array(z.string()).optional(),
 });
+const FinalShotSpecSchema = z.object({
+    shot_number: z.number(),
+    timecode: z.string(),
+    duration_seconds: z.number(),
+    director_note: z.string(),
+    camera_spec: z.object({
+        shot_size: z.string(),
+        angle: z.string(),
+        movement: z.string(),
+        focal_length: z.string(),
+        composition: z.string(),
+        depth_of_field: z.string(),
+        emotional_intent: z.string(),
+    }),
+    lighting_spec: z.object({
+        key_light: z.string(),
+        fill_light: z.string().optional(),
+        rim_light: z.string().optional(),
+        palette: z.array(z.string()),
+        special_effects: z.array(z.string()),
+        mood: z.string(),
+    }),
+    motion_spec: z.object({
+        primary_action: z.string(),
+        secondary_motion: z.array(z.string()),
+        impact_frames: z.array(z.string()),
+    }),
+    audio_spec: z.object({
+        foley: z.array(z.string()),
+        sfx: z.array(z.string()),
+        ambience: z.array(z.string()),
+        music_cue: z.string(),
+        dialogue_or_vocals: z.array(z.string()),
+        sync_notes: z.array(z.string()),
+    }),
+    vfx_spec: z.object({
+        effects: z.array(z.string()),
+        layer_notes: z.array(z.string()),
+    }),
+    animation_spec: z.object({
+        animation_method: z.string(),
+        key_frames: z.array(z.string()),
+        in_betweening: z.string(),
+        held_frames: z.array(z.string()),
+        smear_frames: z.array(z.string()),
+        linework: z.string(),
+        cel_shading: z.string(),
+    }),
+});
+export type FinalShotSpec = z.infer<typeof FinalShotSpecSchema>;
+
 export const MasterIntegratorOutputSchema = z.object({
     masterPrompt: z.object({
         director_vision_statement: z.string(),
@@ -1007,7 +1058,7 @@ export const MasterIntegratorOutputSchema = z.object({
             thematic_elements: ThemeSymbolismOutputSchema.shape.thematicElements,
         }),
         complete_visual_bible: VisualIntegratorOutputSchema.shape.visualBible,
-        final_shot_list_with_all_specs: z.array(z.any()), // Can be tightened later
+        final_shot_list_with_all_specs: z.array(FinalShotSpecSchema),
         complete_audio_bible: AudioIntegratorOutputSchema.shape.audioBible,
         production_ready_technical_bible: TechnicalIntegratorOutputSchema.shape.technicalBible,
         integration_provenance: z.object({
