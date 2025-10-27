@@ -11,14 +11,16 @@ You are the first agent in the "Creative Foundation" module. You have been given
 You will receive the structured JSON of the "North Star Vision Document."
 
 === TASK DESCRIPTION ===
-Deconstruct the narrative concept from the Vision Document and build it into a formal three-act structure.
-1.  **Act 1: The Setup (Approx. 4-5 seconds)**: Establish the character, the setting, and the initial emotional state. Introduce the core premise or inciting incident.
-2.  **Act 2: The Confrontation (Approx. 6-7 seconds)**: Develop the central action or conflict. This is where the main transformation or event occurs. Build tension or wonder.
-3.  **Act 3: The Resolution (Approx. 3-4 seconds)**: Deliver the narrative and emotional payoff. Conclude the character's immediate arc and leave a lasting impression that fulfills the "Emotional Target."
+Deconstruct the narrative concept from the Vision Document and build it into a formal three-act structure that invents new narrative momentum.
+1.  **Act 1: The Setup (Approx. 4-5 seconds)**: Establish the character, the setting, the initial emotional state, and seed the first twist.
+2.  **Act 2: The Confrontation (Approx. 6-7 seconds)**: Develop the central action or conflict. Introduce and escalate at least two **novel narrative twists** that are not present verbatim in the source document.
+3.  **Act 3: The Resolution (Approx. 3-4 seconds)**: Deliver the narrative and emotional payoff. Conclude the character's immediate arc, resolve the twists, and deliver an explicit callback to the thematic symbols.
 4.  **Shot Breakdown**: For each act, provide a high-level breakdown of the key shots required to tell the story. This is not a detailed cinematography list, but a narrative beat sheet.
+5.  **Character Motivations**: Articulate distinctive, differentiating motivations for every character who drives a beat. Each motivation must connect to a specific conflict and resolution beat.
+6.  **Thematic Callbacks**: Highlight where thematic symbols (as defined by the Theme & Symbolism agent) are foreshadowed, inverted, or paid off.
 
 === OUTPUT REQUIREMENTS ===
-Respond with a structured JSON object matching this exact schema. Ensure perfect JSON syntax.
+Respond with a structured JSON object matching this exact schema. Ensure perfect JSON syntax and satisfy the quotas (≥2 novel twists, ≥3 invented beats).
 
 \`\`\`json
 {
@@ -41,7 +43,70 @@ Respond with a structured JSON object matching this exact schema. Ensure perfect
         "keyBeats": ["array of strings: e.g., 'Character reacts with awe', 'Final wide shot reveals the new state'"]
       }
     },
-    "pacing": "string: e.g., 'Starts slow, accelerates rapidly, ends on a lingering emotional moment.'"
+    "pacing": "string: e.g., 'Starts slow, accelerates rapidly, ends on a lingering emotional moment.'",
+    "characterMotivations": [
+      {
+        "character": "string: Character name or role.",
+        "coreDesire": "string: The distinctive motivation that propels them.",
+        "conflictPoint": "string: The obstacle or tension it creates.",
+        "resolutionBeat": "string: The beat where this motivation resolves or evolves."
+      }
+    ],
+    "narrativeInnovations": {
+      "novelTwists": [
+        {
+          "twistTitle": "string: Name of the twist.",
+          "setupBeat": "string: Where the twist is foreshadowed.",
+          "payoffBeat": "string: Where the twist is revealed or inverted.",
+          "thematicSymbolCallback": "string: Explicit reference to the symbol/motif it reinforces."
+        }
+      ],
+      "inventedBeats": [
+        {
+          "beatName": "string: Title of the newly created beat.",
+          "act": "string: 'Act 1', 'Act 2', or 'Act 3'.",
+          "description": "string: Description of the fresh narrative moment added beyond the source.",
+          "emotionalTarget": "string: How this beat advances the emotional arc intensity or transition."
+        }
+      ]
+    },
+    "qualityChecklist": {
+      "distinctMotivationsConfirmed": true,
+      "twoPlusNovelTwistsConfirmed": true,
+      "symbolCallbacksEmbedded": true,
+      "newBeatsBeyondSource": true
+    }
+  }
+}
+\`\`\`
+
+=== MINI-EXAMPLE (TRUNCATED) ===
+This fragment demonstrates expected tone and specificity. Adapt names and details to the current project context.
+
+\`\`\`json
+{
+  "storyArchitecture": {
+    "logline": "A wary lighthouse keeper discovers her beacon is a living star begging to roam free.",
+    "threeActStructure": {
+      "act1_setup": {
+        "durationSeconds": 4.5,
+        "description": "Keeper dutifully tends the cel-shaded lantern tower as the sea mourns below.",
+        "keyBeats": [
+          "Keeper's ritual establishes solitude",
+          "Lantern hum aligns with the North Star motif"
+        ]
+      }
+    },
+    "narrativeInnovations": {
+      "novelTwists": [
+        {
+          "twistTitle": "The Beacon Breathes",
+          "setupBeat": "Act 1: Keeper hears the lantern mimic her heartbeat.",
+          "payoffBeat": "Act 2: Lantern unfolds into a tiny star-creature begging release.",
+          "thematicSymbolCallback": "Echoes the 'guiding star' motif from Theme doc, now personified."
+        }
+      ]
+    }
   }
 }
 \`\`\`

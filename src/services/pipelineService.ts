@@ -53,9 +53,21 @@ const getAgentInput = (agentName: AgentName, agentOutputs: Record<string, any>, 
       case 'colorScript':
         return { visionDocument: agentOutputs.visionSynthesizer, emotionalArc: agentOutputs.emotionalArcDesigner };
       case 'characterDesign':
-          return { visionDocument: agentOutputs.visionSynthesizer, storyArchitecture: agentOutputs.storyArchitect, colorScript: agentOutputs.colorScript };
+          return {
+            visionDocument: agentOutputs.visionSynthesizer,
+            storyArchitecture: agentOutputs.storyArchitect,
+            emotionalArc: agentOutputs.emotionalArcDesigner,
+            thematicElements: agentOutputs.themeSymbolism,
+            colorScript: agentOutputs.colorScript
+          };
       case 'worldDesign':
-          return { visionDocument: agentOutputs.visionSynthesizer, storyArchitecture: agentOutputs.storyArchitect, colorScript: agentOutputs.colorScript };
+          return {
+            visionDocument: agentOutputs.visionSynthesizer,
+            storyArchitecture: agentOutputs.storyArchitect,
+            emotionalArc: agentOutputs.emotionalArcDesigner,
+            thematicElements: agentOutputs.themeSymbolism,
+            colorScript: agentOutputs.colorScript
+          };
       case 'visualIntegrator':
           return { characterDesign: agentOutputs.characterDesign, worldDesign: agentOutputs.worldDesign, colorScript: agentOutputs.colorScript };
       case 'qualityGate3':

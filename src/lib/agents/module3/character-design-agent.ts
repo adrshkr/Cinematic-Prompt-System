@@ -1,6 +1,6 @@
 // lib/agents/module3/character-design-agent.ts
 import { BaseAgent, AgentContext, AgentCritique } from '../base-agent';
-import { CharacterDesignInput, CharacterDesignOutput, CharacterDesignInputSchema, CharacterDesignOutputSchema, VisionValidatorOutput, ColorScriptOutput } from '../../../types/agents';
+import { CharacterDesignInput, CharacterDesignOutput, CharacterDesignInputSchema, CharacterDesignOutputSchema, VisionValidatorOutput, ColorScriptOutput, EmotionalArcDesignerOutput, ThemeSymbolismOutput } from '../../../types/agents';
 import { CHARACTER_DESIGN_PROMPT } from '../../prompts/module3';
 
 export class CharacterDesignAgent extends BaseAgent<CharacterDesignInput, CharacterDesignOutput> {
@@ -17,8 +17,10 @@ export class CharacterDesignAgent extends BaseAgent<CharacterDesignInput, Charac
     const critiques: AgentCritique[] = [];
     const visionDocument = context.outputs.visionSynthesizer as VisionValidatorOutput;
     const colorScript = context.outputs.colorScript as ColorScriptOutput;
+    const emotionalArc = context.outputs.emotionalArcDesigner as EmotionalArcDesignerOutput;
+    const thematicElements = context.outputs.themeSymbolism as ThemeSymbolismOutput;
 
-    if (!visionDocument || !colorScript) {
+    if (!visionDocument || !colorScript || !emotionalArc || !thematicElements) {
         return critiques;
     }
 
@@ -63,6 +65,12 @@ export class CharacterDesignAgent extends BaseAgent<CharacterDesignInput, Charac
       
       Story Architecture:
       ${JSON.stringify(input.storyArchitecture, null, 2)}
+
+      Emotional Arc Design:
+      ${JSON.stringify(input.emotionalArc, null, 2)}
+
+      Theme & Symbolism:
+      ${JSON.stringify(input.thematicElements, null, 2)}
 
       Color Script:
       ${JSON.stringify(input.colorScript, null, 2)}
